@@ -1,0 +1,108 @@
+.addbook {
+  width: 80vw;
+  margin: auto;
+  text-align: center;
+}
+
+.addbook input {
+  margin: 0 2rem;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.addbook .add-form input {
+  margin-top: 2rem;
+}
+
+.addbook input:focus,
+.addbook input:hover {
+  background-color: rgba(246, 237, 237);
+}
+
+.addbook form {
+  margin: 3rem;
+}
+
+.addbook .find-form {
+  padding: 5rem 0;
+}
+
+form fieldset,
+form legend {
+  background: #f9f9f9;
+}
+
+form fieldset {
+  width: 50%;
+  padding: 2.5em 2em 2em 2em;
+  position: relative;
+  border: 2px solid;
+  margin: auto;
+}
+
+form legend {
+  padding: 0.5rem 1rem;
+  left: 50%;
+  top: -1.4rem;
+  position: absolute;
+  transform: translateX(-50%);
+  border: 3px solid;
+}
+
+.addbook .categories {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+fieldset {
+  width: 100%;
+}
+
+.addbook h1 {
+  width: 100%;
+  color: red;
+  margin-bottom: 3rem;
+}
+
+* .addbook .categories-item {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+}
+
+.addbook .categories-item:hover {
+  background-color: rgba(246, 237, 237);
+}
+
+.addbook .categories input {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin: 0;
+}
+
+.addbook button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #000;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  border-radius: 5px;
+  color: rgb(208, 70, 70);
+}
+
+.addbook button:hover,
+.addbook button:focus {
+  color: #060;
+  background: #fff;
+}
