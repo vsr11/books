@@ -1,6 +1,12 @@
 import { DB_HOST_URL } from "../constants";
 
 const internal_api = {
+  getAll: () => {
+    return fetch(DB_HOST_URL)
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
+
   getGeneric: (key, value) => {
     return fetch(`${DB_HOST_URL}?${key}=${value}`)
       .then((res) => res.json())
