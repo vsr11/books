@@ -1,0 +1,56 @@
+.book-item {
+  width: 20%;
+  background-color: rgb(253, 247, 247);
+  margin: 5rem 3rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.book-item:hover {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.398);
+}
+
+.book-item a {
+  text-decoration: none;
+}
+
+.book-item div > span {
+  margin: 0.5rem auto;
+}
+
+.book-item .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 1;
+  margin: 1rem 0;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.book-item .title a:hover {
+  color: red;
+}
+
+.book-item .author {
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.book-item .img {
+  width: 160px;
+  height: 220px;
+  overflow: hidden;
+  margin: 2rem auto;
+}
+
+.book-item img {
+  width: 100%;
+}
+
+.book-item img:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
