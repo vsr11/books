@@ -25,5 +25,12 @@
         "fantasy"
       ]
     }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$VYofVGoDPHDSHJrTcNR5B.GKPB0urJkDdb1veM4pZhYfPvJiihbKa",
+      "id": 1
+    }
   ]
 }
