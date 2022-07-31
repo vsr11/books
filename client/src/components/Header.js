@@ -31,12 +31,12 @@ function Header() {
           </ul>
           <ul>
             <li>
-              <Link to="/">
+              <Link to="/login">
                 <div>Login</div>
               </Link>
             </li>
             <li>
-              <Link to="/">
+              <Link to="/register">
                 <div>Register</div>
               </Link>
             </li>
