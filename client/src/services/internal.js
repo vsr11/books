@@ -7,6 +7,12 @@ const internal_api = {
       .catch((e) => console.log(e));
   },
 
+  getById: (id) => {
+    return fetch(DB_HOST_URL + "/" + id)
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
+
   getGeneric: (key, value) => {
     return fetch(`${DB_HOST_URL}?${key}=${value}`)
       .then((res) => res.json())
@@ -43,8 +49,10 @@ const internal_api = {
     return internal_api.getGeneric("isbn", isbn);
   },
 
-  findBookById: (id) => {
-    return internal_api.getGeneric("id", id);
+  getByCategories: (cat, value) => {
+    return fetch(`http://localhost:5000/books/?${cat}_like=${value}`)
+      .then((res) => res.json())
+      .catch((err) => console.log("Handled error:" + err));
   },
 };
 
