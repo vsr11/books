@@ -8,7 +8,7 @@ const DeleteBook = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    internal_api.findBookById(params?.id).then((res) => setBook(res[0]));
+    internal_api.getById(params?.id).then((res) => setBook(res[0]));
   }, [params.id]);
 
   const onDeleteHandler = (e) => {
