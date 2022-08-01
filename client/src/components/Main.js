@@ -28,7 +28,7 @@ class Main extends Component {
         <div id="site">
           <div className="categories">
             <h2>CATEGORIES</h2>
-            <div className="header-categories">
+            <div className="item-categories">
               <ul>
                 {categories.map((x) => (
                   <li>
