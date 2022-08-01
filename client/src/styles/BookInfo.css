@@ -1,0 +1,114 @@
+.book-info-site {
+  width: 960px;
+  padding: 0px 10px 30px 10px;
+  margin: 100px auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+.book-view {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gallery-box {
+  width: 300px;
+  height: auto;
+  background-color: rgb(242, 240, 240);
+  border-radius: 10px;
+}
+
+.gallery-box img {
+  width: 80%;
+  display: block;
+  margin: 50px auto;
+}
+
+.book-info {
+  width: 50%;
+  padding: 20px;
+}
+
+.book-info-title {
+  margin: 20px 0;
+  font-size: 26px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.book-info div {
+  margin-bottom: 20px;
+}
+
+.bibliography {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+.bibliography div {
+  margin-bottom: 2rem;
+}
+
+.book-description,
+.book-description p {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.bibliography h1,
+.book-description h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+table,
+th,
+td {
+  border: none;
+  border-collapse: separate;
+}
+
+table {
+  width: 70%;
+  margin: 3rem auto;
+}
+
+tr:nth-child(2n) td {
+  background-color: white;
+}
+
+tr td {
+  border: 2px solid #efefef;
+  padding: 10px 20px;
+  vertical-align: top;
+  text-align: right;
+  font-weight: normal;
+
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  background: #f5f5f5;
+  color: #686565;
+}
+
+tr td:last-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.book-description p {
+  white-space: pre-line;
+}
