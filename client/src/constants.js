@@ -1,4 +1,4 @@
-const NAME = "";
+const NAME = "BOOKS";
 const SLOGAN = "";
 
 const DB_HOST_URL = "http://localhost:5000/books";
