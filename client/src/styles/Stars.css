@@ -1,0 +1,12 @@
+.rating-box {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  background: url(../star.svg) repeat-x left top;
+}
+
+.rating-box .rating {
+  position: absolute;
+  left: 0;
+  background: url(../star-yellow.svg) repeat-x left top;
+}
