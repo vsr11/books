@@ -4,6 +4,7 @@
   justify-content: space-around;
   margin: auto;
   background-color: #f7f7f7;
+  color: black;
 }
 
 #main {
@@ -13,36 +14,26 @@
   flex-wrap: wrap;
 }
 
-#main .to-top {
-  width: 4rem;
-  height: 4rem;
-  background-color: white;
-  border: 1px;
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#main .fa-solid {
-  font-size: 3rem;
-}
-
-ul {
+#site .categories .item-categories ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-ul li {
+#site .categories .item-categories ul li {
   margin: 1rem 0;
   font-size: 1.5rem;
   text-transform: capitalize;
 }
 
-.header-categories > ul > li::before {
+#site .categories .item-categories {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#site .categories .item-categories ul li::before {
   content: "\f105";
   font-size: 1rem;
   font-family: fontawesome;
@@ -50,14 +41,37 @@ ul li {
   margin: 0 1rem;
 }
 
-a:hover + a:active {
+a:hover {
   color: #f3712e;
-}
-
-a {
-  cursor: pointer;
 }
 
 .categories {
   margin-top: 10rem;
+}
+
+#main .to-top {
+  width: 3rem;
+  height: 3rem;
+  color: #f3712e;
+  border: 1px;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+#main .to-top:hover {
+  color: white;
+  background-color: #f3712e;
+}
+
+#main .fa-solid {
+  font-size: 3rem;
+}
+
+.active {
+  color: #f3712e;
 }
