@@ -49,6 +49,10 @@ const internal_api = {
     return internal_api.getGeneric("isbn", isbn);
   },
 
+  findBookById: (id) => {
+    return internal_api.getGeneric("id", id);
+  },
+
   getByCategories: (cat, value) => {
     return fetch(`http://localhost:5000/books/?${cat}_like=${value}`)
       .then((res) => res.json())
