@@ -1,0 +1,47 @@
+.login {
+    max-width: 50rem;
+    margin: 5rem auto;
+    font-size: 2rem;
+}
+
+.login div {
+    text-align: center;
+}
+
+.login form {
+    width: 50rem;
+    margin: auto;
+    border: 2px solid #090;
+}
+
+.login form label {
+    font-weight: bold;
+}
+
+.login input {
+    margin: 2rem;
+}
+
+.login input:hover {
+    background-color: aliceblue;
+}
+
+.login input:focus+.actions {
+    border-color: #090;
+}
+
+.login div:last-of-type input {
+
+    font-weight: bold;
+    border: 1px solid;
+    background-color: aliceblue;
+    border-color: rgb(208, 228, 246);
+    cursor: pointer;
+}
+
+.login div:last-of-type input:hover {
+
+    border: 1px solid;
+    background-color: rgb(196, 215, 231);
+    border-color: rgb(80, 93, 105);
+}
