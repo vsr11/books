@@ -1,0 +1,56 @@
+ .aside {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .categories .item-categories ul,
+ .sort ul {
+     list-style: none;
+ }
+
+ .categories .item-categories li,
+ .sort li {
+     margin: 1rem 0;
+     font-size: 1.5rem;
+     text-transform: capitalize;
+ }
+
+
+ .categories .item-categories,
+ .sort {
+     text-align: left;
+ }
+
+ a {
+     text-decoration: none;
+     cursor: pointer;
+     color: black;
+ }
+
+ .categories .item-categories li::before,
+ .sort li::before {
+     content: "\f105";
+     font-size: 1rem;
+     font-family: fontawesome;
+     color: #f3712e;
+     margin: 0 1rem;
+ }
+
+ a:hover {
+     color: #f3712e;
+ }
+
+ .categories {
+     margin-top: 10rem;
+ }
+
+ #main .fa-solid {
+     font-size: 3rem;
+
+ }
+
+
+
+ .active {
+     color: #f3712e;
+ }
