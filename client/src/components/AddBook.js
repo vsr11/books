@@ -78,7 +78,7 @@ const AddBook = () => {
             <div className="categories">
               {categories.map((x) => {
                 return (
-                  <div className="categories-item">
+                  <div className="categories-item" key={x}>
                     <label htmlFor={x}>{x}</label>
                     <input type="checkbox" id={x} name="categories" value={x} />
                   </div>
