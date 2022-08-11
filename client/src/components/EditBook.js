@@ -49,7 +49,7 @@ const EditBook = () => {
 
         {categories.map((x) => {
           return (
-            <div>
+            <div key={x}>
               <label htmlFor={x}>{x}</label>
               <input
                 type="checkbox"
