@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { NAME } from "../constants";
 import "../styles/Header.css";
+import Auth from "../contexts/Auth";
 
 function Header() {
+  let auth = useContext(Auth);
+
   return (
     <header id="header">
       <div className="bigheader">{NAME}</div>
@@ -29,17 +33,31 @@ function Header() {
               </Link>
             </li>
           </ul>
+          {auth?.user ? <NavLink to="/mybooks">My books</NavLink> : ""}
           <ul>
-            <li>
-              <Link to="/login">
-                <div>Login</div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/register">
-                <div>Register</div>
-              </Link>
-            </li>
+            {auth?.user ? (
+              <ul>
+                <li>Welcome, {auth?.user?.name}!</li>
+                <li>
+                  <Link to="/logout">
+                    <div>Logout</div>
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul>
+                <li>
+                  <Link to="/login">
+                    <div>Login</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register">
+                    <div>Register</div>
+                  </Link>
+                </li>
+              </ul>
+            )}
           </ul>
         </ul>
       </nav>
