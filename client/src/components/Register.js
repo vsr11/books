@@ -30,7 +30,13 @@ const Register = () => {
     return fetch(USERS_HOST_URL + "/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, name, password: pass, booksRead: [] }),
+      body: JSON.stringify({
+        email,
+        name,
+        password: pass,
+        booksRead: [],
+        role: "user",
+      }),
     })
       .then((res) => res.json())
       .then((res) => {
@@ -62,7 +68,16 @@ const Register = () => {
         </div>
         <div>
           <input type="submit" value="Register" />
-          <input type="reset" value="Reset" />
+          {/* <input type="reset" value="Reset" /> */}
+          <input
+            type="button"
+            value="Go Home"
+            onClick={() => {
+              window.scroll(0, 0);
+              navigate("/");
+              return;
+            }}
+          />
         </div>
       </form>
     </div>
