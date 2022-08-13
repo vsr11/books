@@ -10,6 +10,7 @@ const Logout = () => {
     internal_api.logout();
     auth.user = undefined;
     auth.isLoggedIn = false;
+    auth.isAdmin = false;
     navigate("/");
   }, []);
 };
