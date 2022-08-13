@@ -14,13 +14,18 @@ const Login = () => {
 
     let u = document.forms[0].email.value;
     let p = document.forms[0].password.value;
-    // auth.isLoggedIn = true;
 
     internal_api.userExists(u).then((res) => {
       if (res.length !== 0) {
         auth.user = res[0];
+        auth.isAdmin = false;
         auth.isLoggedIn = true;
+        if (auth.user.role === "admin") {
+          auth.isAdmin = true;
+        }
+        window.scroll(0, 0);
         navigate("/");
+        return;
       } else {
         setErr("Invalid email, name, or password");
       }
@@ -40,7 +45,16 @@ const Login = () => {
         </div>
         <div>
           <input type="submit" value="Login" />
-          <input type="reset" value="Reset" />
+          {/* <input type="reset" value="Reset" /> */}
+          <input
+            type="button"
+            value="Go Home"
+            onClick={() => {
+              window.scroll(0, 0);
+              navigate("/");
+              return;
+            }}
+          />
         </div>
       </form>
       <div className="err">{err}</div>
