@@ -33,8 +33,12 @@ const Register = () => {
       body: JSON.stringify({ email, name, password: pass, booksRead: [] }),
     })
       .then((res) => res.json())
-      .then((res) => (auth.user = res[0]))
-      .then(navigate("/"));
+      .then((res) => {
+        auth.user = res[0];
+        window.scroll(0, 0);
+        navigate("/login");
+        return;
+      });
   };
 
   return (
