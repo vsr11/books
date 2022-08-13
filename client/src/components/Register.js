@@ -1,3 +1,4 @@
+import internal from "../services/internal";
 import { USERS_HOST_URL } from "../constants";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +8,7 @@ import Auth from "../contexts/Auth";
 const Register = () => {
   const navigate = useNavigate();
   const auth = useContext(Auth);
-  const onSubmitRegisterHandle = (e) => {
+  const onSubmitRegisterHandle = async (e) => {
     e.preventDefault();
 
     let email = document.forms[0].email.value;
@@ -20,6 +21,10 @@ const Register = () => {
     }
     if (pass !== pass2) {
       throw new Error("Passwords must match!");
+    }
+    let userExists = await internal.userExists(email);
+    if (userExists) {
+      throw new Error("Email in use!");
     }
 
     return fetch(USERS_HOST_URL + "/signup", {
