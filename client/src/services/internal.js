@@ -1,6 +1,36 @@
 import { DB_HOST_URL } from "../constants";
 
 const internal_api = {
+  getVote: (idUser, idBook) => {
+    return fetch(
+      HOST_URL_BASE + "/votes?user_id=" + idUser + "&book_id=" + idBook
+    )
+      .then((res) => res.json())
+      .catch((e) => {
+        console.log(e);
+      });
+  },
+
+  doVote: (user_id, book_id, rating = 0, comment = "") => {
+    return fetch(HOST_URL_BASE + "/votes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id, book_id, rating, comment }),
+    })
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
+
+  updateVote: (vote_id, rating, comment) => {
+    return fetch(HOST_URL_BASE + "/votes/" + vote_id, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rating, comment }),
+    })
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
+
   getAll: () => {
     return fetch(DB_HOST_URL)
       .then((res) => res.json())
