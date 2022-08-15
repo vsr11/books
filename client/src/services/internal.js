@@ -31,6 +31,15 @@ const internal_api = {
       .catch((e) => console.log(e));
   },
 
+  addRead: (user_id, read_arr) => {
+    return fetch(HOST_URL_BASE + "/users/" + user_id, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ booksRead: read_arr }),
+    })
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
   userExists: (email) => {
     return fetch(`${USERS_HOST_URL}?email=${email}`)
       .then((res) => res.json())
