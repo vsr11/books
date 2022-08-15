@@ -1,4 +1,4 @@
-import { DB_HOST_URL } from "../constants";
+import { DB_HOST_URL, USERS_HOST_URL, HOST_URL_BASE } from "../constants";
 
 const internal_api = {
   getVote: (idUser, idBook) => {
@@ -40,6 +40,17 @@ const internal_api = {
       .then((res) => res.json())
       .catch((e) => console.log(e));
   },
+
+  login: (email, password) => {
+    return fetch(HOST_URL_BASE + "/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => res.json())
+      .catch((e) => console.log(e));
+  },
+
   userExists: (email) => {
     return fetch(`${USERS_HOST_URL}?email=${email}`)
       .then((res) => res.json())
