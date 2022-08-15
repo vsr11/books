@@ -31,6 +31,19 @@ const internal_api = {
       .catch((e) => console.log(e));
   },
 
+  userExists: (email) => {
+    return fetch(`${USERS_HOST_URL}?email=${email}`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.length === 0) {
+          return false;
+        } else {
+          return res;
+        }
+      })
+      .catch((e) => console.log(e));
+  },
+
   getAll: () => {
     return fetch(DB_HOST_URL)
       .then((res) => res.json())
