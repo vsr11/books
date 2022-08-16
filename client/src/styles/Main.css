@@ -14,40 +14,16 @@
   flex-wrap: wrap;
 }
 
-#site .categories .item-categories ul {
-  list-style: none;
+.info {
+  text-align: center;
 }
 
-#site .categories .item-categories ul li {
-  margin: 1rem 0;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-}
 
-#site .categories .item-categories {
-  text-align: left;
-}
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
 
-#site .categories .item-categories ul li::before {
-  content: "\f105";
-  font-size: 1rem;
-  font-family: fontawesome;
-  color: #f3712e;
-  margin: 0 1rem;
-}
 
-a:hover {
-  color: #f3712e;
-}
 
-.categories {
-  margin-top: 10rem;
-}
+
 
 #main .to-top {
   width: 3rem;
@@ -66,12 +42,14 @@ a:hover {
 #main .to-top:hover {
   color: white;
   background-color: #f3712e;
+
 }
 
-#main .fa-solid {
+
+.title {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
   font-size: 3rem;
-}
-
-.active {
-  color: #f3712e;
+  font-weight: 700;
 }
