@@ -22,8 +22,10 @@ const Register = () => {
     if (pass !== pass2) {
       throw new Error("Passwords must match!");
     }
-    let userExists = await internal.userExists(email);
-    if (userExists) {
+    if (pass.length < 5) {
+      throw new Error("Password must be longer than 4 characters!");
+    }
+
       throw new Error("Email in use!");
     }
 
