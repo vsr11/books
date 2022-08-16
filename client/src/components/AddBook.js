@@ -57,7 +57,6 @@ const AddBook = () => {
           <input id="isbn" type="text" name="isbn" />
 
           <input type="submit" value="Find book" onClick={FindBookHandle} />
-          <input type="reset" value="Reset" />
         </fieldset>
       </form>
 
@@ -101,7 +100,7 @@ const AddBook = () => {
       >
         Find another book
       </button>
-      <button type="button" onClick={() => navigate.push("/")}>
+      <button type="button" onClick={() => navigate("/")}>
         Go back
       </button>
     </div>
