@@ -22,10 +22,13 @@ const Register = () => {
     if (pass !== pass2) {
       throw new Error("Passwords must match!");
     }
+
     if (pass.length < 5) {
       throw new Error("Password must be longer than 4 characters!");
     }
 
+    let ue = await internal.userExists(email);
+    if (ue) {
       throw new Error("Email in use!");
     }
 
@@ -58,7 +61,7 @@ const Register = () => {
         </div>
         <div>
           <label htmlFor="email">E-maij:</label>
-          <input type="text" id="email" name="email" />
+          <input type="email" id="email" name="email" />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
@@ -70,7 +73,6 @@ const Register = () => {
         </div>
         <div>
           <input type="submit" value="Register" />
-          {/* <input type="reset" value="Reset" /> */}
           <input
             type="button"
             value="Go Home"
