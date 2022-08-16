@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAME } from "../constants";
 import "../styles/Header.css";
@@ -61,6 +61,15 @@ function Header() {
           </ul>
         </ul>
       </nav>
+      {auth?.isAdmin ? (
+        <div className="admin">
+          <NavLink to="/add">Add Book</NavLink>
+          <NavLink to="/edit">Edit Book</NavLink>
+          <NavLink to="/delete">Delete Book</NavLink>
+        </div>
+      ) : (
+        ""
+      )}
     </header>
   );
 }
