@@ -1,0 +1,76 @@
+.edit {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.edit a {
+    font-size: 2rem;
+}
+
+.edit img {
+    width: 10rem;
+
+}
+
+.edit h1 {
+    width: 40%;
+    text-align: center;
+
+}
+
+.edit form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit h2 {
+    font-size: 2rem;
+    margin: 3rem 0;
+}
+
+.edit h4 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.edit .categories {
+    margin: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+}
+
+.categories>div {
+    width: 150px;
+}
+
+.edit .description {
+    margin-bottom: 3rem;
+}
+
+input {
+    margin: 2rem;
+}
+
+.del {
+    text-align: center;
+}
+
+.del button {
+    margin: 3rem;
+}
+
+.del h1 {
+    width: 100%;
+    margin: 3rem 0;
+}
+
+.del img {
+    width: 10rem;
+    margin: 3rem auto;
+}
