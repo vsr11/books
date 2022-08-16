@@ -64,8 +64,8 @@ const internal_api = {
       .catch((e) => console.log(e));
   },
 
-  getAll: () => {
-    return fetch(DB_HOST_URL)
+  getAll: (type = "books") => {
+    return fetch(HOST_URL_BASE + "/" + type)
       .then((res) => res.json())
       .catch((e) => console.log(e));
   },
