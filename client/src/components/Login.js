@@ -15,25 +15,32 @@ const Login = () => {
     let u = document.forms[0].email.value;
     let p = document.forms[0].password.value;
 
+    if (p === "") {
+      setErr("Password must not be empty!");
+      throw new Error("Password must not be empty!");
+    }
+
     internal_api.userExists(u).then((res) => {
-      if (res.length !== 0) {
+      if (res) {
         auth.user = res[0];
         auth.isAdmin = false;
         auth.isLoggedIn = true;
-        if (auth.user.role === "admin") {
+        if (auth?.user?.role === "admin") {
           auth.isAdmin = true;
         }
         window.scroll(0, 0);
         navigate("/");
         return;
       } else {
-        setErr("Invalid email, name, or password");
+        setErr("Invalid email, name, or password!");
+        throw new Error("Invalid email, name, or password!");
       }
     });
   };
 
   return (
     <div className="login">
+      <h1 className="err">{err}</h1>
       <form onSubmit={onSubmitLoginHandle}>
         <div>
           <label htmlFor="email">E-mail:</label>
@@ -45,7 +52,6 @@ const Login = () => {
         </div>
         <div>
           <input type="submit" value="Login" />
-          {/* <input type="reset" value="Reset" /> */}
           <input
             type="button"
             value="Go Home"
@@ -57,7 +63,6 @@ const Login = () => {
           />
         </div>
       </form>
-      <div className="err">{err}</div>
     </div>
   );
 };

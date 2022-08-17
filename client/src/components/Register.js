@@ -2,10 +2,11 @@ import internal from "../services/internal";
 import { USERS_HOST_URL } from "../constants";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Auth from "../contexts/Auth";
 
 const Register = () => {
+  const [err, setErr] = useState("");
   const navigate = useNavigate();
   const auth = useContext(Auth);
   const onSubmitRegisterHandle = async (e) => {
@@ -17,18 +18,22 @@ const Register = () => {
     let name = document.forms[0].name.value;
 
     if (email === "" || pass === "" || pass2 === "" || name === "") {
+      setErr("All fields are required!");
       throw new Error("All fields are required!");
     }
     if (pass !== pass2) {
+      setErr("Passwords must match!");
       throw new Error("Passwords must match!");
     }
 
     if (pass.length < 5) {
+      setErr("Password must be longer than 4 characters!");
       throw new Error("Password must be longer than 4 characters!");
     }
 
     let ue = await internal.userExists(email);
     if (ue) {
+      setErr("Email in use!");
       throw new Error("Email in use!");
     }
 
@@ -54,13 +59,14 @@ const Register = () => {
 
   return (
     <div className="login">
+      <h1 className="err">{err}</h1>
       <form method="POST" onSubmit={onSubmitRegisterHandle}>
         <div>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" />
         </div>
         <div>
-          <label htmlFor="email">E-maij:</label>
+          <label htmlFor="email">E-mail:</label>
           <input type="email" id="email" name="email" />
         </div>
         <div>
