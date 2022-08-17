@@ -15,6 +15,7 @@ const MyBooks = () => {
       setBooks(books);
     });
   }, []);
+
   let arr1 = [];
   arr1 = books.filter((x) => auth?.user?.booksRead.includes(x.id));
 
@@ -25,17 +26,17 @@ const MyBooks = () => {
       </div>
 
       <NavLink to={"/info/" + book.id} className="title">
-        <h1>{book.title}</h1>
+        <h1>{book?.title}</h1>
       </NavLink>
 
-      <div>{ratingCalc.averageRating(book.rating).toFixed(2)}</div>
-      {/* <div>
-        <Stars arr={book.rating || []} starpx="22" />
-      </div> */}
+      <div>{ratingCalc?.averageRating(book?.rating).toFixed(2)}</div>
+
       <div className="vote">
-        <MyVote idUser={auth.user.id} idBook={book.id} size="30" />
+        <MyVote idUser={auth?.user?.id} idBook={book?.id} size="30" />
       </div>
-      <div>Write a review</div>
+      <div>
+        <NavLink to={"/myreview/" + book.id}>Write a review</NavLink>
+      </div>
     </div>
   ));
 };
