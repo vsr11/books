@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import internal_api from "../services/internal";
 import "../styles/Edit.css";
+import isAdmin from "./hoc/isAdmin";
 
 const DeleteBook = () => {
   const params = useParams();
@@ -16,7 +17,7 @@ const DeleteBook = () => {
     e.preventDefault();
     let res = window.confirm(`Delete book "${book?.title}"?`);
     if (res) {
-      internal_api.deleteBook(book.id).then(navigate("/"));
+      internal_api.deleteBook(book.id).then(navigate("/edit"));
     }
   };
 
@@ -30,7 +31,7 @@ const DeleteBook = () => {
           <button
             onClick={() => {
               window.scroll(0, 0);
-              navigate("/");
+              navigate("/edit");
               return;
             }}
           >
@@ -42,4 +43,4 @@ const DeleteBook = () => {
   );
 };
 
-export default DeleteBook;
+export default isAdmin(DeleteBook);
