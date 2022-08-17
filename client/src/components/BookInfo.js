@@ -99,7 +99,7 @@ const BookInfo = () => {
       </div>
       <div>
         <h1>User ratings</h1>
-        <UserRating arr={book.rating || []} book_id={book.id} />
+        <UserRating arr={book.rating || []} />
       </div>
     </div>
   );
