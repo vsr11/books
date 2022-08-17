@@ -48,12 +48,16 @@ const Categories = () => {
         <div className="title">
           {title1} {params.category}
         </div>
-        {state?.map((x) => (
-          <div key={x.id} style={{ width: "20%", margin: "1rem" }}>
-            <div className="info">{info1(x)}</div>
-            <BookItem key={x.id} {...x} />
-          </div>
-        ))}
+        {state.length === 0 ? (
+          <div className="title">No books yet</div>
+        ) : (
+          state?.map((x) => (
+            <div key={x.id} style={{ width: "20%", margin: "1rem" }}>
+              <div className="info">{info1(x)}</div>
+              <BookItem key={x.id} {...x} />
+            </div>
+          ))
+        )}
       </div>
       <Link
         to="/"
