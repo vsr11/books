@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import BookItem from "./hoc/BookItem";
+import BookItemList from "./hoc/BookItemList";
 import internal from "../services/internal";
 import "../styles/Main.css";
 import { useSearchParams } from "react-router-dom";
 import { ratingCalc } from "../utils/ratingCalc";
 
-const Categories = () => {
+const Categories = (props) => {
   const params = useParams();
   let [searchParams] = useSearchParams();
   let sort = searchParams.get("sort");
@@ -27,7 +28,7 @@ const Categories = () => {
         ratingCalc.ratingCount(item1.rating)
       );
     });
-    title1 = "Most read books";
+    title1 = "Most read ";
     info1 = (x) => ratingCalc.ratingCount(x.rating) + "   votes";
   }
 
@@ -38,7 +39,7 @@ const Categories = () => {
         ratingCalc.averageRating(item1.rating)
       );
     });
-    title1 = "Highest rated books";
+    title1 = "Highest rated ";
     info1 = (x) => "rating : " + ratingCalc.averageRating(x.rating);
   }
 
@@ -46,29 +47,34 @@ const Categories = () => {
     <div id="site">
       <div id="main">
         <div className="title">
-          {title1} {params.category}
+          {title1} {params.category} {title1 ? "books" : ""}
         </div>
         {state.length === 0 ? (
           <div className="title">No books yet</div>
         ) : (
           state?.map((x) => (
-            <div key={x.id} style={{ width: "20%", margin: "1rem" }}>
+            <div key={x.id}>
               <div className="info">{info1(x)}</div>
-              <BookItem key={x.id} {...x} />
+              {/* <BookItem key={x.id} {...x} /> */}
+              {props.view === "list" ? (
+                <BookItemList key={x.id} {...x} />
+              ) : (
+                <BookItem key={x.id} {...x} />
+              )}
             </div>
           ))
         )}
+        <Link
+          to="/"
+          onClick={() => {
+            window.scroll(0, 0);
+          }}
+        >
+          <div className="to-top">
+            <i className="fa-solid fa-arrow-up"></i>
+          </div>
+        </Link>
       </div>
-      <Link
-        to="/"
-        onClick={() => {
-          window.scroll(0, 0);
-        }}
-      >
-        <div className="to-top">
-          <i className="fa-solid fa-arrow-up"></i>
-        </div>
-      </Link>
     </div>
   );
 };
