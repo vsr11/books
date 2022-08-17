@@ -8,7 +8,7 @@ const Stars = (props) => {
       <span
         className="rating-box"
         style={{
-          width: (s + 1) * 5 + 1,
+          width: (s + 1) * 5 + 1 || 0,
           height: s + 1,
           backgroundSize: s + 1,
         }}
@@ -19,7 +19,7 @@ const Stars = (props) => {
             width:
               ((arr ? ratingCalc.averageRating(arr).toFixed(2) : 0) *
                 ((s + 1) * 5 + 1)) /
-              5,
+                5 || 0,
             height: s + 1,
             backgroundSize: s + 1,
           }}
