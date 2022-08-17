@@ -1,7 +1,8 @@
-import { useNavigate, Routes, Route } from "react-router-dom";
-
+import { useNavigate, Routes, Route, useSearchParams } from "react-router-dom";
 import EditBook from "./components/EditBook";
+import Edit from "./components/Edit";
 import DeleteBook from "./components/DeleteBook";
+import ErrorBoundary from "./components/ErrorBoundary";
 import Main from "./components/Main";
 import Default from "./components/Default";
 import AddBook from "./components/AddBook";
@@ -30,6 +31,7 @@ import "./App.css";
 
 function App() {
   // Keep! -- login/logout breaks without this!
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const auth = useContext(Auth);
 
@@ -37,25 +39,45 @@ function App() {
     <div className="App">
       <Auth.Provider value={auth}>
         <Header />
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/add" element={<AddBook />} />
-          <Route path="/edit/:id" element={<EditBook />} />
-          <Route path="/delete/:id" element={<DeleteBook />} />
-          <Route path="/info/:id" element={<BookInfo />} />
-          <Route path="/mybooks" element={<MyBooks />} />
-          <Route path="/myvote" element={<MyVote />} />
-          <Route path="/myreview/:book_id" element={<MyReview />} />
-          {/* <Route path="/ratingstars" element={<RatingStars />} /> */}
+        <ErrorBoundary>
+          <Routes>
+            {/* All allowed */}
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/info/:id" element={<BookInfo />} />
 
-          <Route path="/" element={<Main />}>
-            <Route path="categories/:category" element={<Categories />} />
-            <Route index element={<Default />} />
-          </Route>
-          <Route path="*" element={<p>There's nothing here!</p>} />
-        </Routes>
+            {/* Admin allowed */}
+            <Route path="/add" element={<AddBook />} />
+            <Route path="/edit" element={<Edit />} />
+            <Route path="/edit/:id" element={<EditBook />} />
+            <Route path="/delete/:id" element={<DeleteBook />} />
+
+            {/* Logged-in user allowed */}
+            <Route path="/mybooks" element={<MyBooks />} />
+            <Route path="/myvote" element={<MyVote />} />
+            <Route path="/myreview/:book_id" element={<MyReview />} />
+
+            <Route path="/" element={<Main />}>
+              <Route
+                path="categories/:category"
+                element={<Categories view={searchParams.get("view")} />}
+              />
+
+              <Route
+                index
+                element={<Default view={searchParams.get("view")} />}
+              />
+            </Route>
+            <Route
+              path="*"
+              element={
+                // <p>There's nothing here!</p>
+                <h1 className="err">Page not found!</h1>
+              }
+            />
+          </Routes>
+        </ErrorBoundary>
         <Footer />
       </Auth.Provider>
     </div>
