@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import internal_api from "../services/internal";
 import { Rating } from "react-simple-star-rating";
+import isAllowed from "./hoc/isAllowed";
 
 const MyVote = ({ idUser, idBook, size }) => {
   const [rating, setRating] = useState(0);
@@ -38,4 +39,4 @@ const MyVote = ({ idUser, idBook, size }) => {
     </div>
   );
 };
-export default MyVote;
+export default isAllowed(MyVote);
