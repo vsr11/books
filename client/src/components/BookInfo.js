@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import internal from "../services/internal";
 import "../styles/BookInfo.css";
+import UserRating from "./UserRating";
 
 const BookInfo = () => {
   const [book, setBook] = useState({});
   const params = useParams();
-
   useEffect(() => {
     internal.getById(params.id).then((res) => setBook(res));
   }, [params.id]);
@@ -14,11 +14,9 @@ const BookInfo = () => {
   return (
     <div className="book-info-site">
       <div className="book-view">
-        <Link to={"/edit/" + params.id}>
-          <div className="gallery-box">
-            <img src={book.img} alt="" />
-          </div>
-        </Link>
+        <div className="gallery-box">
+          <img src={book.img} alt="" />
+        </div>
 
         <div className="book-info">
           <div className="book-info-title">{book.title}</div>
@@ -98,6 +96,10 @@ const BookInfo = () => {
             </tr>
           </tbody>
         </table>
+      </div>
+      <div>
+        <h1>User ratings</h1>
+        <UserRating arr={book.rating || []} book_id={book.id} />
       </div>
     </div>
   );
