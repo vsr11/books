@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { categories } from "../utils/categories";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/Edit.css";
+import isAdmin from "./hoc/isAdmin";
 
 const EditBook = () => {
   const [onebook, setBook] = useState({});
@@ -21,7 +22,7 @@ const EditBook = () => {
     if (book) {
       let categories = [];
 
-      for (let x of e.currentTarget.parentNode) {
+      for (let x of e.currentTarget.parentNode.parentNode) {
         if (x.type === "checkbox" && x.checked) {
           categories.push(x.value);
         }
@@ -36,7 +37,7 @@ const EditBook = () => {
           categories: categories,
           img: document.forms[0].img.value,
         })
-        .then(navigate("/edit/" + params.id));
+        .then(navigate("/edit"));
     }
   };
 
@@ -88,7 +89,7 @@ const EditBook = () => {
             value="Go Home"
             onClick={() => {
               window.scroll(0, 0);
-              navigate("/");
+              navigate("/edit");
               return;
             }}
           />
@@ -98,4 +99,4 @@ const EditBook = () => {
   );
 };
 
-export default EditBook;
+export default isAdmin(EditBook);
