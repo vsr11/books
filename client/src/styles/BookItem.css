@@ -1,5 +1,5 @@
 .book-item {
-  width: 100%;
+  width: 280px;
   background-color: rgb(253, 247, 247);
   margin: 1rem;
   padding: 0.5rem;
@@ -73,7 +73,7 @@
 }
 
 .book-item .button {
-  color: red;
+  color: #f3712e;
   font-size: 1.3rem;
   font-weight: bold;
 }

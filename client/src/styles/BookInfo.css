@@ -121,3 +121,8 @@ tr td:last-child {
 .book-description p {
   white-space: pre-line;
 }
+
+.user-rating-list button {
+  border: none;
+  background-color: transparent;
+}

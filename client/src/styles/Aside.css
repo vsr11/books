@@ -30,7 +30,7 @@
  .categories .item-categories li::before,
  .sort li::before {
      content: "\f105";
-     font-size: 1rem;
+     font-size: 1.2rem;
      font-family: fontawesome;
      color: #f3712e;
      margin: 0 1rem;
@@ -44,10 +44,10 @@
      margin-top: 10rem;
  }
 
- #main .fa-solid {
+ /* #main .aside .fa-solid {
      font-size: 3rem;
 
- }
+ } */
 
 
 
