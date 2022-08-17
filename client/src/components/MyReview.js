@@ -8,7 +8,6 @@ import Stars from "./Stars";
 
 const MyReview = () => {
   const [vote, setVote] = useState({});
-  // const [book_name, setBookName] = useState("");
   const [book, setBook] = useState({});
   const auth = useContext(Auth);
   const url = useParams();
