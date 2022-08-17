@@ -4,12 +4,12 @@ import { Rating } from "react-simple-star-rating";
 
 const MyVote = ({ idUser, idBook, size }) => {
   const [rating, setRating] = useState(0);
-  const [bookrat, setBookrat] = useState([0, 0, 0, 0, 0]);
+  const [bookRating, setBookRating] = useState([0, 0, 0, 0, 0]);
   const [vote, setVote] = useState({});
 
   useEffect(() => {
     internal_api.getById(idBook).then((res) => {
-      setBookrat(res.rating);
+      setBookRating(res.rating);
     });
     internal_api.getVote(idUser, idBook).then((res) => {
       setVote(res[0]);
@@ -18,14 +18,13 @@ const MyVote = ({ idUser, idBook, size }) => {
 
   const handleRating = (rate) => {
     setRating(rate);
-    bookrat[5 - rate / 20] = bookrat[5 - rate / 20] + 1;
-    console.log(vote.rating);
+    bookRating[5 - rate / 20] = bookRating[5 - rate / 20] + 1;
     if (vote.rating > 0) {
-      bookrat[5 - vote.rating] = bookrat[5 - vote.rating] - 1;
+      bookRating[5 - vote.rating] = bookRating[5 - vote.rating] - 1;
     }
-    console.log(bookrat);
-    internal_api.updateVote(vote.id, rate / 20);
-    internal_api.updateBook(idBook, { rating: bookrat });
+    vote.rating = rate / 20;
+    internal_api.updateVote(vote.id, vote.rating);
+    internal_api.updateBook(idBook, { rating: bookRating });
   };
 
   return (
