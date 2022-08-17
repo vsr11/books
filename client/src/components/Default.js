@@ -6,6 +6,7 @@ import internal from "../services/internal";
 import "../styles/Main.css";
 import "../utils/ratingCalc";
 import { ratingCalc } from "../utils/ratingCalc";
+import Footer from "./Footer";
 
 const Default = () => {
   const [books, setBooks] = useState([]);
@@ -63,6 +64,7 @@ const Default = () => {
             <i className="fa-solid fa-arrow-up"></i>
           </div>
         </Link>
+        <Footer />
       </div>
     </div>
   );
