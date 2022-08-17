@@ -1,3 +1,4 @@
+import isAllowed from "./hoc/isAllowed";
 import Auth from "../contexts/Auth";
 import { NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
@@ -41,4 +42,4 @@ const MyBooks = () => {
   ));
 };
 
-export default MyBooks;
+export default isAllowed(MyBooks);

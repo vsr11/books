@@ -1,3 +1,4 @@
+import isAdmin from "../components/hoc/isAdmin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { categories } from "../utils/categories";
@@ -107,4 +108,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default isAdmin(AddBook);

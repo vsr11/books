@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Auth from "../contexts/Auth";
 import internal_api from "../services/internal";
 import "../styles/MyReview.css";
+import isAllowed from "./hoc/isAllowed";
 import Stars from "./Stars";
 
 const MyReview = () => {
@@ -69,5 +70,4 @@ const MyReview = () => {
     </div>
   );
 };
-
-export default MyReview;
+export default isAllowed(MyReview);
