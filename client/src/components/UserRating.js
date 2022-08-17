@@ -8,20 +8,24 @@ import { useEffect, useState } from "react";
 
 const UserRating = (props) => {
   const [all, setAll] = useState([]);
+  const [user, setUser] = useState([]);
   const arr = props.arr;
-  const bookId = props.book_id;
-  const br = ["red", "blue", "green", "#4809f7", "#04AA6D"];
+  const br = ["#f7a309", "#f7a309", "#f7a309", "#f7a309", "##f7a309"];
   const [star, setStar] = useState(0);
 
+  const url = useParams();
   useEffect(() => {
     internal.getAll("votes").then((res) => {
       setAll(res);
     });
+    internal.getAll("users").then((res) => {
+      setUser(res);
+    });
   }, []);
-  let new1 = all.filter(
-    (vote) => vote.book_id === bookId && vote.rating === star
-  );
 
+  let new1 = all.filter(
+    (vote) => vote.book_id === url.id && vote.rating === star
+  );
   return (
     <>
       <div className="user-rating">
@@ -32,10 +36,10 @@ const UserRating = (props) => {
           <div>{ratingCalc.ratingCount(arr)} review</div>
         </div>
         <div className="user-rating-right">
-          {[0, 1, 2, 3, 4].map((x, idx) => {
+          {[0, 1, 2, 3, 4].map((x) => {
             return (
-              <>
-                <div className="user-rating-list" key={idx}>
+              <div key={x}>
+                <div className="user-rating-list" key={x}>
                   <button
                     type="button"
                     onClick={() => {
@@ -45,7 +49,7 @@ const UserRating = (props) => {
                     {5 - x} <i className="fa-solid fa-star"></i>
                   </button>
                   <RatingList
-                    key={idx}
+                    key={x}
                     bgcolor={br[x]}
                     completed={Math.round(
                       (arr[x] * 100) / ratingCalc.ratingCount(arr)
@@ -53,12 +57,38 @@ const UserRating = (props) => {
                   />
                   <span>( {arr[x]} )</span>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
       </div>
-      <div className="rating-info">{new1.map((x) => x.rating)}</div>
+      <div className="rating-info">
+        <h1>Ratings & Reviews</h1>
+
+        {new1.map((x) => (
+          <div key="x.id" className="rating-item">
+            <div>
+              <b> {user?.find((el) => el?.id === x?.user_id)?.name}</b>
+            </div>
+            <div>
+              <b>Rating: </b>
+              {[1, 2, 3, 4, 5].map((x) => {
+                return x <= star ? (
+                  <i className="fa-star fa-solid"></i>
+                ) : (
+                  <i className="fa-star fa-regular"></i>
+                );
+              })}
+              <div>
+                <div>
+                  <b>Comment: </b>
+                  {x.comment !== "" ? x.comment : "No comments yet!"}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
