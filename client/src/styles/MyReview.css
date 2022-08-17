@@ -1,0 +1,22 @@
+.review {
+    width: 80%;
+    margin: 5rem auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.review>* {
+    margin-top: 3rem;
+}
+
+.review form label {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.review .bookinfo {
+    display: flex;
+    justify-content: space-evenly;
+    width: 65%;
+    margin: auto;
+}

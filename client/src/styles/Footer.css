@@ -1,0 +1,23 @@
+#footer {
+
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #413f3f;
+
+    width: 100%;
+    margin: auto;
+
+}
+
+#footer a {
+    padding: 0 2rem;
+    color: white;
+    margin: 0 2rem;
+}
+
+#footer .fa-solid {
+    font-size: 2rem;
+    color: white;
+    margin-right: 10px;
+}
