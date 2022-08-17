@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import internal_api from "../services/internal";
+import "../styles/Edit.css";
 
 const DeleteBook = () => {
   const params = useParams();
@@ -21,10 +22,22 @@ const DeleteBook = () => {
 
   return (
     book && (
-      <>
-        <div>{book?.title}</div>
-        <button onClick={onDeleteHandler}>Delete</button>
-      </>
+      <div className="del">
+        <h1>{book?.title}</h1>
+        <img src={book?.img} alt="" />
+        <div>
+          <button onClick={onDeleteHandler}>Delete</button>
+          <button
+            onClick={() => {
+              window.scroll(0, 0);
+              navigate("/");
+              return;
+            }}
+          >
+            Go Home
+          </button>
+        </div>
+      </div>
     )
   );
 };
