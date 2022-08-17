@@ -156,17 +156,17 @@
   ],
   "users": [
     {
-      "email": "test@test.com",
-      "password": "$2a$10$hNTgVGHKyLMBT41oXRgFHOJktDjAVhCKnLtub1H3oZRqjwnXpHJyO",
-      "name": "Test test",
+      "email": "admin@example.com",
+      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
+      "name": "Admin Dude",
       "booksRead": ["y3CyRurE7P4C", "HestSXO362YC", "dFgbnwEACAAJ"],
       "role": "admin",
       "id": 1
     },
     {
-      "email": "test2@test.com",
-      "password": "$2a$10$bJJYfbJZksCcPSiP9yWnY.DAa9I68lG9lZLsx4i1Jz0G5QSn22VKC",
-      "name": "Test Test",
+      "email": "test@example.com",
+      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
+      "name": "Test Dude",
       "booksRead": ["sJdUAzLUNyAC", "dFgbnwEACAAJ"],
       "role": "user",
       "id": 2
