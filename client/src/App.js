@@ -20,8 +20,6 @@ import MyReview from "./components/MyReview";
 
 // import internal_api from "../services/internal";
 import { useContext } from "react";
-// import SortCount from "./components/SortCount";
-// import SortAv from "./components/SortAv";
 // import MainList from "./components/MainList";
 
 import Auth from "./contexts/Auth";
@@ -30,8 +28,8 @@ import "./App.css";
 // import Big from "./components/Big";
 
 function App() {
-  // Keep! -- login/logout breaks without this!
   const [searchParams] = useSearchParams();
+  // Keep! -- login/logout breaks without this!
   const navigate = useNavigate();
   const auth = useContext(Auth);
 
