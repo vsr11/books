@@ -9,7 +9,7 @@ function WrappedView(props) {
   const [flag, SetFlag] = useState(false);
   // const [arr, setArr] = useState(auth.isLoggedIn ? auth.user.booksRead : []);
 
-  const onReadHendle = () => {
+  const onReadHandle = () => {
     auth.user.booksRead.push(props.id);
     SetFlag(!flag);
     internal_api.addRead(auth.user.id, auth.user.booksRead);
@@ -18,7 +18,6 @@ function WrappedView(props) {
 
   return (
     <div className={props.classdiv}>
-      {/* {auth.isLoggedIn ? auth.user.booksRead : ""} */}
       <div className="img">
         <Link to={"/info/" + props.id}>
           <img src={props.img} alt="NO IMG" />
@@ -34,7 +33,7 @@ function WrappedView(props) {
         auth.user.booksRead.includes(props.id) ? (
           <span className="button">Read</span>
         ) : (
-          <button type="button" onClick={onReadHendle}>
+          <button type="button" onClick={onReadHandle}>
             Read
           </button>
         )
