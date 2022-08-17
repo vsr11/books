@@ -2,6 +2,7 @@ import internal_api from "../services/internal";
 import { useState, useEffect } from "react";
 import { categories } from "../utils/categories";
 import { useNavigate, useParams } from "react-router-dom";
+import "../styles/Edit.css";
 
 const EditBook = () => {
   const [onebook, setBook] = useState({});
@@ -40,50 +41,60 @@ const EditBook = () => {
   };
 
   return (
-    <form>
-      <h1>{onebook?.title}</h1>
-      <img src={onebook?.img} alt="" />
-
-      <div className="categories">
+    <div className="edit">
+      <form>
+        <h2>{onebook?.title}</h2>
+        <img src={onebook?.img} alt="" />
+        <div>
+          <label htmlFor="img">Image:</label>
+          <input type="text" name="img" defaultValue={onebook?.img} />
+        </div>
         <h4>CATEGORIES</h4>
+        <div className="categories">
+          {categories.map((x) => {
+            return (
+              <div key={x}>
+                <label htmlFor={x}>{x}</label>
+                <input
+                  type="checkbox"
+                  id={x}
+                  name="categories"
+                  value={x}
+                  defaultChecked={onebook?.categories?.includes(x) && "checked"}
+                />
+              </div>
+            );
+          })}
+        </div>
 
-        {categories.map((x) => {
-          return (
-            <div key={x}>
-              <label htmlFor={x}>{x}</label>
-              <input
-                type="checkbox"
-                id={x}
-                name="categories"
-                value={x}
-                defaultChecked={onebook?.categories?.includes(x) && "checked"}
-              />
-            </div>
-          );
-        })}
-      </div>
+        <div className="description">
+          <label htmlFor="text">
+            <h4>DESCRIPTION</h4>
+          </label>
+          <br />
+          <textarea
+            name="text"
+            id="text"
+            cols="30"
+            rows="10"
+            defaultValue={onebook?.description}
+          ></textarea>
+        </div>
 
-      <div>
-        <label htmlFor="img">Image:</label>
-        <input type="text" name="img" defaultValue={onebook?.img} />
-      </div>
-
-      <div>
-        <label htmlFor="text">
-          <h4>DESCRIPTION</h4>
-        </label>
-        <br />
-        <textarea
-          name="text"
-          id="text"
-          cols="30"
-          rows="10"
-          defaultValue={onebook?.description}
-        ></textarea>
-      </div>
-
-      <input type="submit" value="Edit book" onClick={EditBookHandle} />
-    </form>
+        <div>
+          <input type="submit" value="Edit book" onClick={EditBookHandle} />
+          <input
+            type="button"
+            value="Go Home"
+            onClick={() => {
+              window.scroll(0, 0);
+              navigate("/");
+              return;
+            }}
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 
