@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import BookItem from "./hoc/BookItem";
+import BookItemList from "./hoc/BookItemList";
 import internal from "../services/internal";
 import "../styles/Main.css";
 import "../utils/ratingCalc";
 import { ratingCalc } from "../utils/ratingCalc";
-import Footer from "./Footer";
 
-const Default = () => {
+const Default = (props) => {
   const [books, setBooks] = useState([]);
 
   const [searchParams] = useSearchParams();
@@ -49,9 +49,13 @@ const Default = () => {
       <div id="main">
         <div className="title">{title1}</div>
         {books?.map((x) => (
-          <div key={x.id} style={{ width: "20%", margin: "1rem" }}>
+          <div key={x.id} className="book">
             <div className="info">{info1(x)}</div>
-            <BookItem key={x.id} {...x} />
+            {props.view === "list" ? (
+              <BookItemList key={x.id} {...x} />
+            ) : (
+              <BookItem key={x.id} {...x} />
+            )}
           </div>
         ))}
         <Link
@@ -64,7 +68,6 @@ const Default = () => {
             <i className="fa-solid fa-arrow-up"></i>
           </div>
         </Link>
-        <Footer />
       </div>
     </div>
   );
