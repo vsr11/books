@@ -26,7 +26,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/list">
+              <Link to="?view=list">
                 <div>
                   <i className="fa-solid fa-grip-vertical"></i>
                 </div>
@@ -64,8 +64,7 @@ function Header() {
       {auth?.isAdmin ? (
         <div className="admin">
           <NavLink to="/add">Add Book</NavLink>
-          <NavLink to="/edit">Edit Book</NavLink>
-          <NavLink to="/delete">Delete Book</NavLink>
+          <NavLink to="/edit">Edit/Delete Book</NavLink>
         </div>
       ) : (
         ""
