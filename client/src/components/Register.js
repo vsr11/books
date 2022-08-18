@@ -1,14 +1,12 @@
-import internal from "../services/internal";
 import { USERS_HOST_URL } from "../constants";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import Auth from "../contexts/Auth";
+import { useState } from "react";
 
 const Register = () => {
   const [err, setErr] = useState("");
   const navigate = useNavigate();
-  const auth = useContext(Auth);
+
   const onSubmitRegisterHandle = async (e) => {
     e.preventDefault();
 
@@ -17,24 +15,14 @@ const Register = () => {
     let pass2 = document.forms[0].repeatPassword.value;
     let name = document.forms[0].name.value;
 
-    if (email === "" || pass === "" || pass2 === "" || name === "") {
-      setErr("All fields are required!");
-      throw new Error("All fields are required!");
+    if (name === "") {
+      setErr("Name required");
+      throw new Error("Name required");
     }
+
     if (pass !== pass2) {
-      setErr("Passwords must match!");
-      throw new Error("Passwords must match!");
-    }
-
-    if (pass.length < 5) {
-      setErr("Password must be longer than 4 characters!");
-      throw new Error("Password must be longer than 4 characters!");
-    }
-
-    let ue = await internal.userExists(email);
-    if (ue) {
-      setErr("Email in use!");
-      throw new Error("Email in use!");
+      setErr("Passwords must match");
+      throw new Error("Passwords must match");
     }
 
     return fetch(USERS_HOST_URL + "/signup", {
@@ -50,7 +38,14 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        auth.user = res[0];
+        if (typeof res == "string") {
+          setErr(res);
+          throw new Error(res);
+        } else {
+          return Promise.resolve(res);
+        }
+      })
+      .then((res) => {
         window.scroll(0, 0);
         navigate("/login");
         return;
@@ -59,7 +54,6 @@ const Register = () => {
 
   return (
     <div className="login">
-      <h1 className="err">{err}</h1>
       <form method="POST" onSubmit={onSubmitRegisterHandle}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -77,6 +71,7 @@ const Register = () => {
           <label htmlFor="repeat-password">Repeat Password:</label>
           <input type="password" id="repeat-password" name="repeatPassword" />
         </div>
+        <div className="err">{err}</div>
         <div>
           <input type="submit" value="Register" />
           <input

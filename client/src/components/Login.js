@@ -15,46 +15,33 @@ const Login = () => {
     let u = document.forms[0].email.value;
     let p = document.forms[0].password.value;
 
-    if (p === "") {
-      setErr("Password must not be empty!");
-      throw new Error("Password must not be empty!");
-    }
+    internal_api
+      .login(u, p)
+      .then((res) => {
+        if (typeof res == "string") {
+          setErr(res);
+          throw new Error(res);
+        } else {
+          return Promise.resolve(res);
+        }
+      })
+      .then((res) => {
+        auth.user = res[0];
+        auth.isLoggedIn = true;
 
-    internal_api.userExists(u).then((res) => {
-      if (res) {
-        internal_api
-          .login(u, p)
-          .then((res) => {
-            if (typeof res == "string") {
-              if (res === "Incorrect password") {
-                res = "Invalid email, name, or password!";
-              }
-              setErr(res);
-              throw new Error(res);
-            }
-          })
-          .then(() => {
-            auth.user = res[0];
-            auth.isAdmin = false;
-            auth.isLoggedIn = true;
-            if (auth?.user?.role === "admin") {
-              auth.isAdmin = true;
-            }
-            window.scroll(0, 0);
-            navigate("/");
-            return;
-          });
-      } else {
-        setErr("Invalid email, name, or password!");
-        throw new Error("Invalid email, name, or password!");
-      }
-    });
+        if (auth?.user?.role === "admin") {
+          auth.isAdmin = true;
+        } else {
+          auth.isAdmin = false;
+        }
+        window.scroll(0, 0);
+        navigate("/");
+        return;
+      });
   };
 
   return (
     <div className="login">
-      <h1 className="err">{err}</h1>
-
       <form onSubmit={onSubmitLoginHandle}>
         <div>
           <label htmlFor="email">E-mail:</label>
@@ -64,6 +51,7 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" />
         </div>
+        <div className="err">{err}</div>
         <div>
           <input type="submit" value="Login" />
           <input
