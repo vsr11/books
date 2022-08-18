@@ -13,7 +13,7 @@ const Categories = (props) => {
   let sort = searchParams.get("sort");
   const [state, setState] = useState([]);
   let title1 = "";
-  let info1 = (x) => null;
+  let info1 = () => null;
 
   useEffect(() => {
     internal.getByCategories("categories", params.category).then((books) => {
@@ -55,7 +55,6 @@ const Categories = (props) => {
           state?.map((x) => (
             <div key={x.id}>
               <div className="info">{info1(x)}</div>
-              {/* <BookItem key={x.id} {...x} /> */}
               {props.view === "list" ? (
                 <BookItemList key={x.id} {...x} />
               ) : (

@@ -16,16 +16,9 @@ import Categories from "./components/Categories";
 import MyBooks from "./components/MyBooks";
 import MyVote from "./components/MyVote";
 import MyReview from "./components/MyReview";
-// import RatingStars from "./components/RatingStars";
-
-// import internal_api from "../services/internal";
 import { useContext } from "react";
-// import MainList from "./components/MainList";
-
 import Auth from "./contexts/Auth";
 import "./App.css";
-// import internal_api from "./services/internal";
-// import Big from "./components/Big";
 
 function App() {
   const [searchParams] = useSearchParams();
@@ -39,19 +32,16 @@ function App() {
         <Header />
         <ErrorBoundary>
           <Routes>
-            {/* All allowed */}
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/info/:id" element={<BookInfo />} />
 
-            {/* Admin allowed */}
             <Route path="/add" element={<AddBook />} />
             <Route path="/edit" element={<Edit />} />
             <Route path="/edit/:id" element={<EditBook />} />
             <Route path="/delete/:id" element={<DeleteBook />} />
 
-            {/* Logged-in user allowed */}
             <Route path="/mybooks" element={<MyBooks />} />
             <Route path="/myvote" element={<MyVote />} />
             <Route path="/myreview/:book_id" element={<MyReview />} />
@@ -69,10 +59,7 @@ function App() {
             </Route>
             <Route
               path="*"
-              element={
-                // <p>There's nothing here!</p>
-                <h1 className="err">Page not found!</h1>
-              }
+              element={<h1 className="err">Page not found!</h1>}
             />
           </Routes>
         </ErrorBoundary>

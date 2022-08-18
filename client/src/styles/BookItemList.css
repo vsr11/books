@@ -30,7 +30,6 @@
     width: 30%;
     font-size: 2rem;
     font-weight: bold;
-    /* height: 2.5rem; */
     line-height: 1;
     margin: 1rem 0;
     overflow: hidden;
@@ -49,11 +48,7 @@
 }
 
 .book-item-list .img {
-    /* width: 100px; */
-
     overflow: hidden;
-    /* margin: 2rem; */
-
 }
 
 .book-item-list img {

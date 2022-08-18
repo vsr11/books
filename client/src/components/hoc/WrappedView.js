@@ -7,7 +7,6 @@ import internal_api from "../../services/internal";
 function WrappedView(props) {
   const auth = useContext(Auth);
   const [flag, SetFlag] = useState(false);
-  // const [arr, setArr] = useState(auth.isLoggedIn ? auth.user.booksRead : []);
 
   const onReadHendler = () => {
     auth.user.booksRead.push(props.id);

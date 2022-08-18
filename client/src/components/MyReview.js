@@ -46,7 +46,6 @@ const MyReview = () => {
       </div>
 
       <form onSubmit={myReviewSubmitHandle}>
-        {/* <label htmlFor="comment">Write your review:</label> */}
         <textarea
           name="comment"
           defaultValue={vote?.comment}

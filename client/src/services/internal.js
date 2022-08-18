@@ -6,9 +6,7 @@ const internal_api = {
       HOST_URL_BASE + "/votes?user_id=" + idUser + "&book_id=" + idBook
     )
       .then((res) => res.json())
-      .catch((e) => {
-        console.log(e);
-      });
+      .catch((e) => console.log(e));
   },
 
   doVote: (user_id, book_id, rating = 0, comment = "") => {

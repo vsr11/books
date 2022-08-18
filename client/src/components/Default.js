@@ -14,7 +14,7 @@ const Default = (props) => {
   const [searchParams] = useSearchParams();
   const sort = searchParams.get("sort");
   let title1 = "";
-  let info1 = (x) => null;
+  let info1 = () => null;
 
   useEffect(() => {
     internal.getAll().then((books) => {
@@ -40,6 +40,7 @@ const Default = (props) => {
         ratingCalc.averageRating(item1.rating)
       );
     });
+
     title1 = "Highest rated books";
     info1 = (x) => "rating : " + ratingCalc.averageRating(x.rating);
   }

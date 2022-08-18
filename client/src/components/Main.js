@@ -6,6 +6,7 @@ import Aside from "./Aside";
 
 const Main = () => {
   let auth = useContext(Auth);
+
   return (
     <div id="site">
       {auth?.user?.user?.email}
