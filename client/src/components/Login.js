@@ -22,15 +22,28 @@ const Login = () => {
 
     internal_api.userExists(u).then((res) => {
       if (res) {
-        auth.user = res[0];
-        auth.isAdmin = false;
-        auth.isLoggedIn = true;
-        if (auth?.user?.role === "admin") {
-          auth.isAdmin = true;
-        }
-        window.scroll(0, 0);
-        navigate("/");
-        return;
+        internal_api
+          .login(u, p)
+          .then((res) => {
+            if (typeof res == "string") {
+              if (res === "Incorrect password") {
+                res = "Invalid email, name, or password!";
+              }
+              setErr(res);
+              throw new Error(res);
+            }
+          })
+          .then(() => {
+            auth.user = res[0];
+            auth.isAdmin = false;
+            auth.isLoggedIn = true;
+            if (auth?.user?.role === "admin") {
+              auth.isAdmin = true;
+            }
+            window.scroll(0, 0);
+            navigate("/");
+            return;
+          });
       } else {
         setErr("Invalid email, name, or password!");
         throw new Error("Invalid email, name, or password!");
@@ -41,6 +54,7 @@ const Login = () => {
   return (
     <div className="login">
       <h1 className="err">{err}</h1>
+
       <form onSubmit={onSubmitLoginHandle}>
         <div>
           <label htmlFor="email">E-mail:</label>

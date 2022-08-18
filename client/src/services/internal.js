@@ -42,7 +42,7 @@ const internal_api = {
   },
 
   login: (email, password) => {
-    return fetch(HOST_URL_BASE + "/signup", {
+    return fetch(HOST_URL_BASE + "/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
