@@ -26,7 +26,7 @@ const Login = () => {
         }
       })
       .then((res) => {
-        auth.user = res[0];
+        auth.user = res.user;
         auth.isLoggedIn = true;
 
         if (auth?.user?.role === "admin") {
