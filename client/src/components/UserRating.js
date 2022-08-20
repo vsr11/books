@@ -65,29 +65,33 @@ const UserRating = (props) => {
       <div className="rating-info">
         <h1>Ratings & Reviews</h1>
 
-        {new1.map((x) => (
-          <div key="x.id" className="rating-item">
-            <div>
-              <b> {user?.find((el) => el?.id === x?.user_id)?.name}</b>
-            </div>
-            <div>
-              <b>Rating: </b>
-              {[1, 2, 3, 4, 5].map((x) => {
-                return x <= star ? (
-                  <i className="fa-star fa-solid"></i>
-                ) : (
-                  <i className="fa-star fa-regular"></i>
-                );
-              })}
+        {new1.map((x) =>
+          x.rating !== 0 ? (
+            <div key="x.id" className="rating-item">
               <div>
+                <b> {user?.find((el) => el?.id === x?.user_id)?.name}</b>
+              </div>
+              <div>
+                <b>Rating: </b>
+                {[1, 2, 3, 4, 5].map((x) => {
+                  return x <= star ? (
+                    <i className="fa-star fa-solid"></i>
+                  ) : (
+                    <i className="fa-star fa-regular"></i>
+                  );
+                })}
                 <div>
-                  <b>Comment: </b>
-                  {x.comment !== "" ? x.comment : "No comments yet!"}
+                  <div>
+                    <b>Review: </b>
+                    {x.review !== "" ? x.review : "No reviews yet!"}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ) : (
+            ""
+          )
+        )}
       </div>
     </>
   );
