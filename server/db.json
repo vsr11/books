@@ -1,285 +1,388 @@
 {
   "books": [
     {
-      "id": "sJdUAzLUNyAC",
-      "title": "The Hunger Games",
-      "authors": ["Suzanne Collins"],
-      "publishedDate": "2008",
-      "pageCount": 374,
-      "img": "http://books.google.com/books/content?id=ycNqnNdcTR4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [2, 0, 0, 0, 0],
-      "description": "zzzzzz\n\nxxxxxxx\nnnnnnn",
-      "language": "en",
-      "isbn": "0439023483",
-      "categories": ["thriller", "romance"]
-    },
-    {
       "id": "PGR2AwAAQBAJ",
       "title": "To Kill a Mockingbird",
-      "authors": ["Harper Lee"],
+      "authors": [
+        "Harper Lee"
+      ],
       "publisher": "Harper Collins",
       "publishedDate": "2014-07-08",
       "pageCount": 336,
       "img": "http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [1, 0, 0, 0, 0],
+      "rating": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "Voted America's Best-Loved Novel in PBS's The Great American Read Harper Lee's Pulitzer Prize-winning masterwork of honor and injustice in the deep South—and the heroism of one man in the face of blind and violent hatred One of the most cherished stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime.",
       "language": "en",
       "isbn": "0062368680",
-      "categories": ["history", "young adult"]
-    },
-    {
-      "id": "dFgbnwEACAAJ",
-      "title": "1984",
-      "authors": ["George Orwell"],
-      "publisher": "Oberon Books",
-      "publishedDate": "2014-09-02",
-      "pageCount": 96,
-      "img": "http://books.google.com/books/content?id=dFgbnwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 2, 1, 0],
-      "description": "April, 1984. Winston Smith thinks a thought, starts a diary, and falls in love. But Big Brother is watching him, and the door to Room 101 can swing open in the blink of an eye. Its ideas have become our ideas, and Orwell's fiction is often said to be our reality. The definitive book of the 20th century is re-examined in a radical new adaptation exploring why Orwell's vision of the future is as relevant as ever.",
-      "language": "en",
-      "isbn": "1783190612",
-      "categories": ["fantasy"]
+      "categories": [
+        "history",
+        "young adult"
+      ]
     },
     {
       "id": "HestSXO362YC",
       "title": "The Great Gatsby",
-      "authors": ["Francis Scott Fitzgerald"],
+      "authors": [
+        "Francis Scott Fitzgerald"
+      ],
       "publisher": "Wordsworth Editions",
       "publishedDate": "2001",
       "pageCount": 122,
       "img": "http://books.google.com/books/content?id=HestSXO362YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 1, 0, 1, 0],
+      "rating": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
       "description": "A young man newly rich tries to recapture the past and win back his former love, despite the fact that she has married",
       "language": "en",
       "isbn": "185326041X",
-      "categories": ["history", "romance"]
+      "categories": [
+        "history",
+        "romance"
+      ]
     },
     {
       "id": "l39QAwAAQBAJ",
       "title": "The Little Prince",
-      "authors": ["Antoine de Saint-Exupéry"],
+      "authors": [
+        "Antoine de Saint-Exupéry"
+      ],
       "publisher": "Houghton Mifflin Harcourt",
       "publishedDate": "2013",
       "pageCount": 96,
       "img": "http://books.google.com/books/content?id=l39QAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "An aviator whose plane is forced down in the Sahara Desert encounters a little prince from a small planet who relates his adventures in seeking the secret of what is important in life.",
       "language": "en",
       "isbn": " The Little Prince ",
-      "categories": ["romance", "fantasy", "young adult"]
+      "categories": [
+        "romance",
+        "fantasy",
+        "young adult"
+      ]
     },
     {
       "id": "y3CyRurE7P4C",
       "title": "Fahrenheit 451",
-      "authors": ["Ray Bradbury"],
+      "authors": [
+        "Ray Bradbury"
+      ],
       "publisher": "Simon and Schuster",
       "publishedDate": "2012-01-10",
       "pageCount": 159,
       "img": "http://books.google.com/books/content?id=y3CyRurE7P4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 0, 0, 1, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
       "description": "A totalitarian regime has ordered all books to be destroyed, but one of the book burners, Guy Montag, suddenly realizes their merit.",
       "language": "en",
       "isbn": "1451673310",
-      "categories": ["fantasy"]
+      "categories": [
+        "fantasy"
+      ]
     },
     {
       "id": "mjqMDQAAQBAJ",
       "title": "The Grapes of Wrath",
-      "authors": ["John Steinbeck"],
+      "authors": [
+        "John Steinbeck"
+      ],
       "publisher": "Penguin",
       "publishedDate": "2014-04-10",
       "pageCount": 496,
       "img": "http://books.google.com/books/content?id=mjqMDQAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "April 2014 marks the 75th anniversary of the first Viking hardcover publication of Steinbeck’s crowning literary achievement First published in 1939, Steinbeck’s Pulitzer Prize–winning epic of the Great Depression chronicles the Dust Bowl migration of the 1930s and tells the story of one Oklahoma farm family, the Joads, driven from their homestead and forced to travel west to the promised land of California. Out of their trials and their repeated collisions against the hard realities of an America divided into haves and have-nots evolves a drama that is intensely human yet majestic in its scale and moral vision, elemental yet plainspoken, tragic but ultimately stirring in its human dignity. A portrait of the conflict between the powerful and the powerless, of one man’s fierce reaction to injustice, and of one woman’s stoical strength, the novel captures the horrors of the Great Depression and probes the very nature of equality and justice in America. As Don DeLillo has claimed, Steinbeck “shaped a geography of conscience” with this novel where “there is something at stake in every sentence.” Beyond that—for emotional urgency, evocative power, sustained impact, prophetic reach, and continued controversy—The Grapes of Wrath is perhaps the most American of American classics. To commemorate the book's 75th anniversary, this volume is modeled on the first edition, featuring the original cover illustration by Elmer Hader and specially designed endpapers by Michael Schwab.",
       "language": "en",
       "isbn": "067001690X",
-      "categories": ["history", "romance"]
+      "categories": [
+        "history",
+        "romance"
+      ]
     },
     {
       "id": "OpzDuwAACAAJ",
       "title": "The Girl with the Dragon Tattoo",
-      "authors": ["Stieg Larsson"],
+      "authors": [
+        "Stieg Larsson"
+      ],
       "publisher": "Turtleback",
       "publishedDate": "2011-11",
       "pageCount": 644,
       "img": "http://books.google.com/books/content?id=OpzDuwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "Forty years after the disappearance of Harriet Vanger, her octogenarian uncle hires journalist Mikael Blomqvist and Lisbeth Salander, an unconventional young hacker, to investigate.",
       "language": "en",
       "isbn": "0606264728",
-      "categories": ["thriller", "crime"]
+      "categories": [
+        "thriller",
+        "crime"
+      ]
     },
     {
       "id": "filhBQAAQBAJ",
       "title": "The Girl Who Played With Fire",
-      "authors": ["Stieg Larsson"],
+      "authors": [
+        "Stieg Larsson"
+      ],
       "publisher": "Hachette UK",
       "publishedDate": "2010-01-01",
       "pageCount": 576,
       "img": "http://books.google.com/books/content?id=filhBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "*********************** Listbeth Salander returns in the second novel in the bestselling series - 100 million copies of the Girl With the Dragon Tattoo series sold worldwide. \"Even more gripping and astonishing than the first . . . This novel will leave readers on the edge of their seats\" Joan Smith, Sunday Times Lisbeth Salander is a wanted woman. Two Millennium journalists about to expose the truth about sex trafficking in Sweden are murdered, and Salander's prints are on the weapon. Her history of unpredictable and vengeful behaviour makes her an official danger to society - but no-one can find her. Mikael Blomkvist, Millennium magazine's legendary star reporter, does not believe the police. Using all his magazine staff and resources to prove Salander's innocence, Blomkvist also uncovers her terrible past, spent in criminally corrupt institutions. Yet Salander is more avenging angel than helpless victim. She may be an expert at staying out of sight - but she has ways of tracking down her most elusive enemies. Stieg Larsson's groundbreaking trilogy is continued in The Girl in the Spider's Web, The Girl Who Takes an Eye for an Eye and The Girl Who Lived Twice by David Lagercrantz",
       "language": "en",
       "isbn": "1847248977",
-      "categories": ["thriller", "crime"]
+      "categories": [
+        "thriller",
+        "crime"
+      ]
     },
     {
       "id": "luDQvgEACAAJ",
       "title": "The Green Mile",
-      "authors": ["Stephen King"],
+      "authors": [
+        "Stephen King"
+      ],
       "publisher": "New Amer Library",
       "publishedDate": "1996",
       "pageCount": 592,
       "img": "http://books.google.com/books/content?id=luDQvgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 1, 0, 0],
+      "rating": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
       "description": "At Col Mountain Penitentiary, along the lonely stretch of cells known as the Green Mile, killers as depraved as the psychopathic \"Billy the Kid\" Wharton and the possessed Eduard Delacroix await death strapped in \"Old Sparky.\"",
       "language": "en",
       "isbn": "0451933028",
-      "categories": ["thriller", "fantasy"]
+      "categories": [
+        "thriller",
+        "fantasy"
+      ]
     },
     {
       "id": "y7OvtgAACAAJ",
       "title": "The Diary of a Young Girl",
-      "authors": ["Anne Frank"],
+      "authors": [
+        "Anne Frank"
+      ],
       "publisher": "Viking",
       "publishedDate": "2012",
       "pageCount": 350,
       "img": "http://books.google.com/books/content?id=y7OvtgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "In the summer of 1942, fleeing the horrors of the Nazi occupation, Anne Frank and her family were forced into hiding in the back of an Amsterdam warehouse. Aged thirteen when she went into the secret annexe, Anne kept a diary in which she confided her innermost thoughts and feelings, movingly revealing how the eight people living under these extraordinary conditions coped with the daily threat of discovery and death, being cut off from the outside world, petty misunderstandings and the unbearable strain of living like prisoners. An intimate record of tension and struggle, adolescence and confinement, anger and heartbreak, this is the definitive edition of the diary of Anne Frank.",
       "language": "en",
       "isbn": "0670919799",
-      "categories": ["history", "young adult"]
+      "categories": [
+        "history",
+        "young adult"
+      ]
     },
     {
       "id": "duYMAAAAIAAJ",
       "title": "Gone with the Wind",
-      "authors": ["Margaret Mitchell"],
+      "authors": [
+        "Margaret Mitchell"
+      ],
       "publisher": "Macmillan Company of Canada",
       "publishedDate": "1936",
       "pageCount": 1052,
       "img": "http://books.google.com/books/content?id=ycNqnNdcTR4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "New York Times Book Review.",
       "language": "en",
       "isbn": "0446675539",
-      "categories": ["history", "romance"]
+      "categories": [
+        "history",
+        "romance"
+      ]
     },
     {
       "id": "IxnpnAEACAAJ",
       "title": "The Silence of the Lambs",
-      "authors": ["Thomas Harris"],
+      "authors": [
+        "Thomas Harris"
+      ],
       "publisher": "St. Martin's Griffin",
       "publishedDate": "2013-10-01",
       "pageCount": 368,
       "img": "http://books.google.com/books/content?id=IxnpnAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
+      "rating": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "description": "The twenty-fifth anniversary edition of the #1 New York Times bestselling classic, now with a note by author Thomas Harris revealing his inspiration for Hannibal Lecter. A serial murderer known only by a grotesquely apt nickname—Buffalo Bill—is stalking particular women. He has a purpose, but no one can fathom it, for the bodies are discovered in different states. Clarice Starling, a young trainee at the F.B.I. Academy, is surprised to be summoned by Jack Crawford, Chief of the Bureau's Behavioral Science section. Her assignment: to interview Dr. Hannibal Lecter, a brilliant psychiatrist and grisly killer now kept under close watch in the Baltimore State Hospital for the Criminally Insane. Lecter's insight into the minds of murderers could help track and capture Buffalo Bill. Smart and attractive, Starling is shaken to find herself in a strange, intense relationship with the acutely perceptive Lecter. His cryptic clues—about Buffalo Bill and about her—launch Clarice on a search that every reader will find startling, harrowing, and totally compelling. An ingenious, masterfully written novel, The Silence of the Lambs is a classic of suspense and storytelling.",
       "language": "en",
       "isbn": "1250048095",
-      "categories": ["thriller", "horror", "crime"]
+      "categories": [
+        "thriller",
+        "horror",
+        "crime"
+      ]
     },
     {
-      "id": "U7s0DDRf3cgC",
-      "title": "Иван Вазов: Под игото",
-      "publisher": "TRUD Publishers",
-      "img": "http://books.google.com/books/content?id=U7s0DDRf3cgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "rating": [0, 0, 0, 0, 0],
-      "language": "bg",
-      "isbn": "9545286601",
-      "categories": ["history", "young adult"]
+      "id": "UzqVUdEtLDwC",
+      "title": "The Fault in Our Stars",
+      "authors": [
+        "John Green"
+      ],
+      "publisher": "Penguin",
+      "publishedDate": "2012-01-10",
+      "pageCount": 336,
+      "img": "http://books.google.com/books/content?id=UzqVUdEtLDwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "rating": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "description": "The beloved, #1 global bestseller by John Green, author of The Anthropocene Reviewed and Turtles All the Way Down “John Green is one of the best writers alive.” –E. Lockhart, #1 bestselling author of We Were Liars “The greatest romance story of this decade.″ –Entertainment Weekly #1 New York Times Bestseller • #1 Wall Street Journal Bestseller • #1 USA Today Bestseller • #1 International Bestseller Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel’s story is about to be completely rewritten. From John Green, #1 bestselling author of The Anthropocene Reviewed and Turtles All the Way Down, The Fault in Our Stars is insightful, bold, irreverent, and raw. It brilliantly explores the funny, thrilling, and tragic business of being alive and in love.",
+      "language": "en",
+      "isbn": "1101569182",
+      "categories": [
+        "romance",
+        "young adult"
+      ]
     }
   ],
   "users": [
     {
       "email": "admin@example.com",
-      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
-      "name": "Admin Dude",
-      "booksRead": ["y3CyRurE7P4C", "HestSXO362YC", "dFgbnwEACAAJ"],
+      "password": "$2a$10$hNTgVGHKyLMBT41oXRgFHOJktDjAVhCKnLtub1H3oZRqjwnXpHJyO",
+      "name": "Peter Petrov",
+      "booksRead": [
+        "y3CyRurE7P4C",
+        "HestSXO362YC",
+        "PGR2AwAAQBAJ",
+        "sJdUAzLUNyAC",
+        "UzqVUdEtLDwC"
+      ],
       "role": "admin",
       "id": 1
     },
     {
       "email": "test@example.com",
-      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
-      "name": "Test Dude",
-      "booksRead": ["sJdUAzLUNyAC", "dFgbnwEACAAJ"],
+      "password": "$2a$10$bJJYfbJZksCcPSiP9yWnY.DAa9I68lG9lZLsx4i1Jz0G5QSn22VKC",
+      "name": "Georgie Georgiev",
+      "booksRead": [
+        "sJdUAzLUNyAC"
+      ],
       "role": "user",
       "id": 2
     },
     {
       "email": "test2@example.com",
-      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
-      "name": "Test Dude 2",
-      "booksRead": ["y7OvtgAACAAJ", "y3CyRurE7P4C"],
+      "password": "$2a$10$tFENoxDQ8JMqeGy8RxaRPOobjSp893OxreR8mFNNiqvUkEvlqwps6",
+      "name": "Ivan Ivanov",
+      "booksRead": [
+        "sJdUAzLUNyAC",
+        "PGR2AwAAQBAJ",
+        "HestSXO362YC",
+        "luDQvgEACAAJ"
+      ],
       "role": "user",
       "id": 3
     }
+
   ],
   "votes": [
     {
       "user_id": 2,
       "book_id": "sJdUAzLUNyAC",
       "rating": 5,
-      "review": "",
+      "review": "Absolute solid gold standard. Phenomenal.",
       "id": 1
-    },
-    {
-      "user_id": 2,
-      "book_id": "dFgbnwEACAAJ",
-      "rating": 2,
-      "review": "aaaaa",
-      "id": 2
     },
     {
       "user_id": 1,
       "book_id": "y3CyRurE7P4C",
       "rating": 2,
-      "review": "",
+      "review": "This is one of the best books ever written. This is one of my favorite books of all time. ALL TIME. This is the third time I've read it. I audiobooked it this time.",
       "id": 3
     },
     {
       "user_id": 1,
       "book_id": "HestSXO362YC",
       "rating": 2,
-      "review": "When I avowed my disenchantment with Tender Is the Night, a few GR friends urged me to read The Great Gatsby to truly appreciate F. Scott Fitzgerald. I cannot but admit The Great Gatsby was a far more exhilarating read than I had expected it to be, its tight...",
+      "review": "When I avowed my disenchantment with Tender Is the Night, a few GR friends urged me to read The Great Gatsby to truly appreciate F. Scott Fitzgerald. I cannot but admit The Great Gatsby was a far more exhilarating read than I had expected it to be.",
       "id": 4
-    },
-    {
-      "user_id": 1,
-      "book_id": "dFgbnwEACAAJ",
-      "rating": 3,
-      "review": "",
-      "id": 5
     },
     {
       "user_id": 3,
       "book_id": "sJdUAzLUNyAC",
       "rating": 5,
-      "review": "The Hunger Games e best!\nYes! Yes!\nvvvvvvvvv",
+      "review": "The Hunger Games e best!",
       "id": 6
     },
     {
       "user_id": 3,
       "book_id": "PGR2AwAAQBAJ",
       "rating": 5,
-      "review": "Okey...",
+      "review": "Why is it when I pick up To Kill A Mockingbird , I am instantly visited by a sensory memory: I’m walking home, leaves litter the ground, crunching under my feet. I smell the smoke of fireplaces and think about hot cider and the wind catches and my breath is taken from me and I bundle my coat tighter against me and lift my head to the sky, no clouds, just a stunning blue that hurts my eyes, another deep breath and I have this feeling that all is okay.",
       "id": 7
-    },
-    {
-      "user_id": 3,
-      "book_id": "dFgbnwEACAAJ",
-      "rating": 3,
-      "review": "aaaa aaaaa aaaaa\nbbbbbb,bbbbb....",
-      "id": 8
     },
     {
       "user_id": 3,
       "book_id": "HestSXO362YC",
       "rating": 4,
-      "review": "The Great Gatsby\nby Francis Scott Fitzgerald",
+      "review": "The Great Gatsby is your neighbor you're best friends with until you find out he's a drug dealer. It charms you with some of the most elegant English prose ever published, making it difficult to discuss the novel without the urge to stammer awestruck about its beauty.",
       "id": 9
     },
     {
@@ -293,8 +396,22 @@
       "user_id": 3,
       "book_id": "luDQvgEACAAJ",
       "rating": 3,
-      "review": "rfgusbrfsj sjbjbhjfh нсдйфкййфн",
+      "review": "I can now clarify, not only with myself, but with every other King fan, that this particular book gave me rather noticeable palpitations and for a moment or two, it made me feel quite faint. I've seen 'The Green Mile' Tom Hanks film adaptation, and although that was also amazing, and it makes for edge-of-the-seat viewing at times, when all is said and done, it has nothing on this book.",
       "id": 11
+    },
+    {
+      "user_id": 1,
+      "book_id": "sJdUAzLUNyAC",
+      "rating": 3,
+      "review": "",
+      "id": 12
+    },
+    {
+      "user_id": 1,
+      "book_id": "UzqVUdEtLDwC",
+      "rating": 5,
+      "review": "",
+      "id": 13
     }
   ]
 }
