@@ -1,3 +1,4 @@
+import ScrollToTop from "./components/hoc/ScrollToTop";
 import { useNavigate, Routes, Route, useSearchParams } from "react-router-dom";
 import EditBook from "./components/EditBook";
 import Edit from "./components/Edit";
@@ -16,54 +17,59 @@ import Categories from "./components/Categories";
 import MyBooks from "./components/MyBooks";
 import MyVote from "./components/MyVote";
 import MyReview from "./components/MyReview";
+import MyVoteList from "./components/MyVoteList";
+import MyReviewList from "./components/MyReviewList";
 import { useContext } from "react";
 import Auth from "./contexts/Auth";
 import "./App.css";
 
 function App() {
   const [searchParams] = useSearchParams();
-  // Keep! -- login/logout breaks without this!
   const navigate = useNavigate();
   const auth = useContext(Auth);
 
   return (
     <div className="App">
       <Auth.Provider value={auth}>
-        <Header />
-        <ErrorBoundary>
-          <Routes>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/info/:id" element={<BookInfo />} />
+        <ScrollToTop>
+          <Header />
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="/info/:id" element={<BookInfo />} />
 
-            <Route path="/add" element={<AddBook />} />
-            <Route path="/edit" element={<Edit />} />
-            <Route path="/edit/:id" element={<EditBook />} />
-            <Route path="/delete/:id" element={<DeleteBook />} />
+              <Route path="/add" element={<AddBook />} />
+              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<EditBook />} />
+              <Route path="/delete/:id" element={<DeleteBook />} />
 
-            <Route path="/mybooks" element={<MyBooks />} />
-            <Route path="/myvote" element={<MyVote />} />
-            <Route path="/myreview/:book_id" element={<MyReview />} />
+              <Route path="/mybooks" element={<MyBooks />} />
+              <Route path="/myvote" element={<MyVote />} />
+              <Route path="/myreview/:book_id" element={<MyReview />} />
+              <Route path="/myvotelist" element={<MyVoteList />} />
+              <Route path="/myreviewlist" element={<MyReviewList />} />
 
-            <Route path="/" element={<Main />}>
+              <Route path="/" element={<Main />}>
+                <Route
+                  path="categories/:category"
+                  element={<Categories view={searchParams.get("view")} />}
+                />
+
+                <Route
+                  index
+                  element={<Default view={searchParams.get("view")} />}
+                />
+              </Route>
               <Route
-                path="categories/:category"
-                element={<Categories view={searchParams.get("view")} />}
+                path="*"
+                element={<h1 className="err">Page not found!</h1>}
               />
-
-              <Route
-                index
-                element={<Default view={searchParams.get("view")} />}
-              />
-            </Route>
-            <Route
-              path="*"
-              element={<h1 className="err">Page not found!</h1>}
-            />
-          </Routes>
-        </ErrorBoundary>
-        <Footer />
+            </Routes>
+          </ErrorBoundary>
+          <Footer />
+        </ScrollToTop>
       </Auth.Provider>
     </div>
   );
