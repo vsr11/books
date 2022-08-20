@@ -1,0 +1,24 @@
+.myvotelist,
+.myreviewlist {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.myreviewlist {
+    text-align: left;
+}
+
+
+
+.myvotelist .vote-stars,
+.myreviewlist .vote-stars {
+    font-size: 2rem;
+    color: red;
+    margin-top: 2rem;
+}
+
+.myvotelist .vote-book,
+.myreviewlist .vote-book {
+    font-size: 2rem;
+}
