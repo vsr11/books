@@ -1,3 +1,4 @@
+import no_book from "../../no-book.png";
 import { Link } from "react-router-dom";
 import Stars from "../Stars";
 import Auth from "../../contexts/Auth";
@@ -19,7 +20,7 @@ function WrappedView(props) {
     <div className={props.classdiv}>
       <div className="img">
         <Link to={"/info/" + props.id}>
-          <img src={props.img} alt="NO IMG" />
+          <img src={props?.img || no_book} alt="" />
         </Link>
       </div>
       <div className="title">
