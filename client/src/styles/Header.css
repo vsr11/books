@@ -16,6 +16,7 @@
 }
 
 #header nav ul {
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -35,4 +36,8 @@
   margin: auto;
   display: flex;
   justify-content: space-evenly;
+}
+
+#header div.user-items>* {
+  margin: 0 1rem;
 }

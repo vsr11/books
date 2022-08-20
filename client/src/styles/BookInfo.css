@@ -113,6 +113,11 @@ tr td {
 
 }
 
+tr td:last-child *::first-letter {
+  text-transform: uppercase;
+
+}
+
 tr td:last-child {
   text-align: left;
   font-weight: 600;
