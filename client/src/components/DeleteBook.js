@@ -1,3 +1,4 @@
+import no_img from "../no-book.png";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import internal_api from "../services/internal";
@@ -25,17 +26,16 @@ const DeleteBook = () => {
     book && (
       <div className="del">
         <h1>{book?.title}</h1>
-        <img src={book?.img} alt="" />
+        <img src={book?.img || no_img} alt="" />
         <div>
           <button onClick={onDeleteHandler}>Delete</button>
           <button
             onClick={() => {
-              window.scroll(0, 0);
               navigate("/edit");
               return;
             }}
           >
-            Go Home
+            Exit
           </button>
         </div>
       </div>
