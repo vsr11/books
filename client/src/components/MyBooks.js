@@ -1,3 +1,4 @@
+import no_book from "../no-book.png";
 import isAllowed from "./hoc/isAllowed";
 import Auth from "../contexts/Auth";
 import { NavLink } from "react-router-dom";
@@ -23,7 +24,7 @@ const MyBooks = () => {
   return arr1.map((book) => (
     <div className="mybooks" key={book.id}>
       <div className="img">
-        <img src={book.img} alt="NO IMG" />
+        <img src={book?.img || no_book} alt="" />
       </div>
 
       <NavLink to={"/info/" + book.id} className="title">
