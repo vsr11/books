@@ -1,3 +1,4 @@
+import no_book from "../no-book.png";
 import internal_api from "../services/internal";
 import { useState, useEffect } from "react";
 import { categories } from "../utils/categories";
@@ -45,7 +46,7 @@ const EditBook = () => {
     <div className="edit">
       <form>
         <h2>{onebook?.title}</h2>
-        <img src={onebook?.img} alt="" />
+        <img src={onebook?.img || no_book} alt="" />
         <div>
           <label htmlFor="img">Image:</label>
           <input type="text" name="img" defaultValue={onebook?.img} />
@@ -86,7 +87,7 @@ const EditBook = () => {
           <input type="submit" value="Edit book" onClick={EditBookHandle} />
           <input
             type="button"
-            value="Go Home"
+            value="Exit"
             onClick={() => {
               window.scroll(0, 0);
               navigate("/edit");

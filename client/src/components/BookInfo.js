@@ -1,3 +1,4 @@
+import no_img from "../no-book.png";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import internal from "../services/internal";
@@ -15,21 +16,21 @@ const BookInfo = () => {
     <div className="book-info-site">
       <div className="book-view">
         <div className="gallery-box">
-          <img src={book.img} alt="" />
+          <img src={book?.img || no_img} alt="" />
         </div>
 
         <div className="book-info">
           <div className="book-info-title">{book.title}</div>
           <div className="book-info-author">
             {book.authors
-              ? book.authors?.map((x, idx) => <div key={idx}>{x}</div>)
+              ? book?.authors?.map((x, idx) => <div key={idx}>{x}</div>)
               : ""}
           </div>
         </div>
       </div>
       <div className="book-description">
         <h1>DESCRIPTION</h1>
-        <p>{book.description}</p>
+        <p>{book?.description}</p>
       </div>
 
       <div className="bibliography">
@@ -38,68 +39,64 @@ const BookInfo = () => {
           <tbody>
             <tr>
               <td>Title</td>
-              <td>{book.title}</td>
+              <td>{book?.title}</td>
             </tr>
             <tr>
               <td>Authors</td>
               <td>
-                {book.authors
-                  ? book.authors?.map((x, idx) => (
-                      <div key={idx}>
-                        <Link to="/">{x}</Link>
-                      </div>
-                    ))
+                {book?.authors
+                  ? book.authors?.map((x, idx) => <div key={idx}>{x}</div>)
                   : ""}
               </td>
             </tr>
-            {book.categories && (
+            {book?.categories && (
               <tr>
                 <td>Categories</td>
                 <td>
-                  {book.categories
-                    ? book.categories?.map((x, idx) => (
+                  {book?.categories
+                    ? book?.categories?.map((x, idx) => (
                         <div key={idx}>
-                          <Link to="/">{x.toUpperCase()}</Link>
+                          <Link to={"/categories/" + x}>{x}</Link>
                         </div>
                       ))
                     : ""}
                 </td>
               </tr>
             )}
-            {book.publisher && (
+            {book?.publisher && (
               <tr>
                 <td>Publisher</td>
-                <td>{book.publisher}</td>
+                <td>{book?.publisher}</td>
               </tr>
             )}
-            {book.publishedDate && (
+            {book?.publishedDate && (
               <tr>
                 <td>Published date</td>
-                <td>{book.publishedDate}</td>
+                <td>{book?.publishedDate}</td>
               </tr>
             )}
             {book.pageCount && (
               <tr>
                 <td>Length</td>
-                <td>{book.pageCount}</td>
+                <td>{book?.pageCount}</td>
               </tr>
             )}
-            {book.language && (
+            {book?.language && (
               <tr>
                 <td>Language</td>
-                <td>{book.language}</td>
+                <td>{book?.language}</td>
               </tr>
             )}
             <tr>
               <td>ISBN</td>
-              <td>{book.isbn}</td>
+              <td>{book?.isbn}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div>
         <h1>User ratings</h1>
-        <UserRating arr={book.rating || []} />
+        <UserRating arr={book?.rating || []} />
       </div>
     </div>
   );
