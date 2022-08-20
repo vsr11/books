@@ -46,7 +46,7 @@ const Default = (props) => {
   }
 
   return (
-    <div id="site">
+    <>
       <div id="main">
         <div className="title">{title1}</div>
         {books?.map((x) => (
@@ -70,7 +70,7 @@ const Default = (props) => {
           </div>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 export default Default;

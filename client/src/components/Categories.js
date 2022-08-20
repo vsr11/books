@@ -44,7 +44,7 @@ const Categories = (props) => {
   }
 
   return (
-    <div id="site">
+    <>
       <div id="main">
         <div className="title">
           {title1} {params.category} {title1 ? "books" : ""}
@@ -74,7 +74,7 @@ const Categories = (props) => {
           </div>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 
