@@ -25,6 +25,11 @@ const Register = () => {
       throw new Error("Passwords must match");
     }
 
+    if (!email.includes("@")) {
+      setErr("Invalid email format");
+      throw new Error("Invalid email format");
+    }
+
     return fetch(USERS_HOST_URL + "/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,7 +50,7 @@ const Register = () => {
           return Promise.resolve(res);
         }
       })
-      .then((res) => {
+      .then(() => {
         window.scroll(0, 0);
         navigate("/login");
         return;
@@ -57,7 +62,7 @@ const Register = () => {
       <form method="POST" onSubmit={onSubmitRegisterHandle}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" autoFocus />
         </div>
         <div>
           <label htmlFor="email">E-mail:</label>
@@ -76,7 +81,7 @@ const Register = () => {
           <input type="submit" value="Register" />
           <input
             type="button"
-            value="Go Home"
+            value="Exit"
             onClick={() => {
               window.scroll(0, 0);
               navigate("/");
