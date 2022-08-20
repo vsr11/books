@@ -1,3 +1,4 @@
+import no_img from "../no-book.png";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Auth from "../contexts/Auth";
@@ -23,16 +24,15 @@ const MyReview = () => {
 
   const myReviewSubmitHandle = (e) => {
     e.preventDefault();
-    console.log(22, vote);
-    let comment = document.forms[0].comment.value;
+    let review = document.forms[0].review.value;
     internal_api
-      .updateVote(vote.id, vote.rating, comment)
+      .updateVote(vote.id, vote.rating, review)
       .then(navigate("/mybooks"));
   };
   return (
     <div className="review">
       <div className="bookinfo">
-        <img src={book.img} alt="" />
+        <img src={book?.img || no_img} alt="" />
         <div>
           <div className="title">{book.title}</div>
           <div>by {book.authors}</div>
@@ -47,8 +47,8 @@ const MyReview = () => {
 
       <form onSubmit={myReviewSubmitHandle}>
         <textarea
-          name="comment"
-          defaultValue={vote?.comment}
+          name="review"
+          defaultValue={vote?.review}
           cols="50"
           rows="5"
         ></textarea>
@@ -56,7 +56,7 @@ const MyReview = () => {
           <input type="submit" value="Edit" />
           <input
             type="button"
-            value="Go Home"
+            value="Exit"
             onClick={() => {
               window.scroll(0, 0);
               navigate("/mybooks");
