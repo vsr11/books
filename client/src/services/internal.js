@@ -9,21 +9,21 @@ const internal_api = {
       .catch((e) => console.log(e));
   },
 
-  doVote: (user_id, book_id, rating = 0, comment = "") => {
+  doVote: (user_id, book_id, rating = 0, review = "") => {
     return fetch(HOST_URL_BASE + "/votes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user_id, book_id, rating, comment }),
+      body: JSON.stringify({ user_id, book_id, rating, review }),
     })
       .then((res) => res.json())
       .catch((e) => console.log(e));
   },
 
-  updateVote: (vote_id, rating, comment) => {
+  updateVote: (vote_id, rating, review) => {
     return fetch(HOST_URL_BASE + "/votes/" + vote_id, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ rating, comment }),
+      body: JSON.stringify({ rating, review }),
     })
       .then((res) => res.json())
       .catch((e) => console.log(e));
