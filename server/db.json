@@ -208,6 +208,14 @@
       "booksRead": ["sJdUAzLUNyAC", "dFgbnwEACAAJ"],
       "role": "user",
       "id": 2
+    },
+    {
+      "email": "test2@example.com",
+      "password": "$2a$10$Zqsr31fGOmLJP0dQJApMt.vAkbNVjzqb/BHmDereM9gR5nabiD2pW",
+      "name": "Test Dude 2",
+      "booksRead": ["y7OvtgAACAAJ", "y3CyRurE7P4C"],
+      "role": "user",
+      "id": 3
     }
   ],
   "votes": [
