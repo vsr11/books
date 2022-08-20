@@ -45,7 +45,7 @@ const Login = () => {
       <form onSubmit={onSubmitLoginHandle}>
         <div>
           <label htmlFor="email">E-mail:</label>
-          <input type="text" id="email" name="email" />
+          <input type="email" id="email" name="email" autoFocus />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
@@ -56,7 +56,7 @@ const Login = () => {
           <input type="submit" value="Login" />
           <input
             type="button"
-            value="Go Home"
+            value="Exit"
             onClick={() => {
               window.scroll(0, 0);
               navigate("/");
