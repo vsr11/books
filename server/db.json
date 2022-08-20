@@ -305,7 +305,7 @@
   "users": [
     {
       "email": "admin@example.com",
-      "password": "$2a$10$hNTgVGHKyLMBT41oXRgFHOJktDjAVhCKnLtub1H3oZRqjwnXpHJyO",
+      "password": "$2a$10$qVzlGSwsWWHcV2AKq2Z67uCAFETlEMKBxXxyw8..CT5g4f4NCck0y",
       "name": "Peter Petrov",
       "booksRead": [
         "y3CyRurE7P4C",
@@ -319,7 +319,7 @@
     },
     {
       "email": "test@example.com",
-      "password": "$2a$10$bJJYfbJZksCcPSiP9yWnY.DAa9I68lG9lZLsx4i1Jz0G5QSn22VKC",
+      "password": "$2a$10$qVzlGSwsWWHcV2AKq2Z67uCAFETlEMKBxXxyw8..CT5g4f4NCck0y",
       "name": "Georgie Georgiev",
       "booksRead": [
         "sJdUAzLUNyAC"
@@ -329,7 +329,7 @@
     },
     {
       "email": "test2@example.com",
-      "password": "$2a$10$tFENoxDQ8JMqeGy8RxaRPOobjSp893OxreR8mFNNiqvUkEvlqwps6",
+      "password": "$2a$10$qVzlGSwsWWHcV2AKq2Z67uCAFETlEMKBxXxyw8..CT5g4f4NCck0y",
       "name": "Ivan Ivanov",
       "booksRead": [
         "sJdUAzLUNyAC",
@@ -340,7 +340,6 @@
       "role": "user",
       "id": 3
     }
-
   ],
   "votes": [
     {
