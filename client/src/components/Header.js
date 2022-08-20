@@ -33,7 +33,11 @@ function Header() {
               </Link>
             </li>
           </ul>
-          {auth?.user ? <NavLink to="/mybooks">My books</NavLink> : ""}
+          <div className="user-items">
+            {auth?.user ? <NavLink to="/mybooks">My books</NavLink> : ""}
+            {auth?.user ? <NavLink to="/myvotelist">My votes</NavLink> : ""}
+            {auth?.user ? <NavLink to="/myreviewlist">My review </NavLink> : ""}
+          </div>
           <ul>
             {auth?.user ? (
               <ul>
