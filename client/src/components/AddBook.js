@@ -102,7 +102,7 @@ const AddBook = () => {
         Find another book
       </button>
       <button type="button" onClick={() => navigate("/")}>
-        Go back
+        Exit
       </button>
     </div>
   );
