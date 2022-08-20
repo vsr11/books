@@ -1,7 +1,6 @@
 import internal_api from "../services/internal";
 import { useState, useEffect } from "react";
-import { categories } from "../utils/categories";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Edit.css";
 
 const Edit = () => {
@@ -13,9 +12,11 @@ const Edit = () => {
     });
   }, []);
 
-  return books.map((book) => (
-    <div className="edit">
-      <h1>{book.title}</h1>
+  return books?.map((book) => (
+    <div className="edit" key={book.id}>
+      <NavLink to={"/info/" + book.id}>
+        <h2>{book.title}</h2>
+      </NavLink>
       <NavLink to={"/edit/" + book.id}>Edit</NavLink>
       <NavLink to={"/delete/" + book.id}>Delete</NavLink>
     </div>
